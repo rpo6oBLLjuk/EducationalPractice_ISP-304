@@ -1,0 +1,17 @@
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\bin\Debug\net8.0-windows\EducationalPractice_ISP-304.exe
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\bin\Debug\net8.0-windows\EducationalPractice_ISP-304.deps.json
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\bin\Debug\net8.0-windows\EducationalPractice_ISP-304.runtimeconfig.json
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\bin\Debug\net8.0-windows\EducationalPractice_ISP-304.dll
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\bin\Debug\net8.0-windows\EducationalPractice_ISP-304.pdb
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\obj\Debug\net8.0-windows\EducationalPractice_ISP_304.Form1.resources
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\obj\Debug\net8.0-windows\EducationalPractice_ISP-304.csproj.GenerateResource.cache
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\obj\Debug\net8.0-windows\EducationalPractice_ISP-304.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\obj\Debug\net8.0-windows\EducationalPractice_ISP-304.AssemblyInfoInputs.cache
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\obj\Debug\net8.0-windows\EducationalPractice_ISP-304.AssemblyInfo.cs
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\obj\Debug\net8.0-windows\EducationalPractice_ISP-304.csproj.CoreCompileInputs.cache
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\obj\Debug\net8.0-windows\EducationalPractice_ISP-304.sourcelink.json
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\obj\Debug\net8.0-windows\EducationalPractice_ISP-304.dll
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\obj\Debug\net8.0-windows\refint\EducationalPractice_ISP-304.dll
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\obj\Debug\net8.0-windows\EducationalPractice_ISP-304.pdb
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\obj\Debug\net8.0-windows\EducationalPractice_ISP-304.genruntimeconfig.cache
+C:\Users\Musat\Documents\GitHub\EducationalPractice_ISP-304\EducationalPractice_ISP-304\obj\Debug\net8.0-windows\ref\EducationalPractice_ISP-304.dll
