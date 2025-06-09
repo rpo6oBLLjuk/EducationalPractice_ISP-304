@@ -22,25 +22,25 @@
 
 
 
-        public static void RenderToBuffer(Form form, PaintEventArgs e, float radius, PointF offset, float C)
+        public static void RenderToBuffer(Panel panel, PaintEventArgs e, float radius, PointF offset, float C)
         {
             e.Graphics.Clear(Color.White);
 
-            //Size formSize = form.Size;
-            //form.Size = _viewSize;
+            //Size panelSize = panel.Size;
+            //panel.Size = _viewSize;
 
-            OnPaint(form, e, radius, offset, C);
+            OnPaint(panel, e, radius, offset, C);
 
-            //form.Size = formSize;
+            //panel.Size = panelSize;
         }
 
-        private static void OnPaint(Form form, PaintEventArgs e, float radius, PointF offset, float C)
+        private static void OnPaint(Panel panel, PaintEventArgs e, float radius, PointF offset, float C)
         {
             var g = e.Graphics;
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
 
-            float centerX = form.ClientSize.Width / 2;
-            float centerY = form.ClientSize.Height / 2;
+            float centerX = panel.Size.Width / 2;
+            float centerY = panel.Size.Height / 2;
 
 
             float squareX = centerX - (_gridStep * 2 * radius) + offset.X * _gridStep * 2;
@@ -51,35 +51,35 @@
 
             DrawPoint(g, squareX, squareY, _gridStep * 2);
 
-            DrawGrid(form, g, centerX, centerY);
+            DrawGrid(panel, g, centerX, centerY);
 
-            DrawAxis(form, g, centerX, centerY);
-            DrawCutter(form, g, centerY, C);
-            DrawCoordinateNumbers(form, g, centerX, centerY);
+            DrawAxis(panel, g, centerX, centerY);
+            DrawCutter(panel, g, centerY, C);
+            DrawCoordinateNumbers(panel, g, centerX, centerY);
         }
 
-        private static void DrawGrid(Form form, Graphics g, float centerX, float centerY)
+        private static void DrawGrid(Panel panel, Graphics g, float centerX, float centerY)
         {
-            for (float x = centerX; x < form.ClientSize.Width; x += _gridStep)
+            for (float x = centerX; x < panel.ClientSize.Width; x += _gridStep)
             {
-                g.DrawLine(_gridPen, x, 0, x, form.ClientSize.Height);
-                g.DrawLine(_gridPen, centerX - (x - centerX), 0, centerX - (x - centerX), form.ClientSize.Height);
+                g.DrawLine(_gridPen, x, 0, x, panel.ClientSize.Height);
+                g.DrawLine(_gridPen, centerX - (x - centerX), 0, centerX - (x - centerX), panel.ClientSize.Height);
             }
 
-            for (float y = centerY; y < form.ClientSize.Height; y += _gridStep)
+            for (float y = centerY; y < panel.ClientSize.Height; y += _gridStep)
             {
-                g.DrawLine(_gridPen, 0, y, form.ClientSize.Width, y);
-                g.DrawLine(_gridPen, 0, centerY - (y - centerY), form.ClientSize.Width, centerY - (y - centerY));
+                g.DrawLine(_gridPen, 0, y, panel.ClientSize.Width, y);
+                g.DrawLine(_gridPen, 0, centerY - (y - centerY), panel.ClientSize.Width, centerY - (y - centerY));
             }
         }
-        private static void DrawAxis(Form form, Graphics g, float centerX, float centerY)
+        private static void DrawAxis(Panel panel, Graphics g, float centerX, float centerY)
         {
-            g.DrawLine(_axisPen, 0, centerY, form.ClientSize.Width, centerY);
-            g.DrawLine(_axisPen, centerX, 0, centerX, form.ClientSize.Height);
+            g.DrawLine(_axisPen, 0, centerY, panel.ClientSize.Width, centerY);
+            g.DrawLine(_axisPen, centerX, 0, centerX, panel.ClientSize.Height);
         }
-        private static void DrawCoordinateNumbers(Form form, Graphics g, float centerX, float centerY)
+        private static void DrawCoordinateNumbers(Panel panel, Graphics g, float centerX, float centerY)
         {
-            for (float x = centerX; x < form.Width; x += 2 * _gridStep)
+            for (float x = centerX; x < panel.Width; x += 2 * _gridStep)
             {
                 int number = (int)((x - centerX) / (2 * _gridStep));
                 if (number != 0)
@@ -97,7 +97,7 @@
                 }
             }
 
-            for (float y = centerY; y < form.Height; y += 2 * _gridStep)
+            for (float y = centerY; y < panel.Height; y += 2 * _gridStep)
             {
                 int number = (int)((y - centerY) / (2 * _gridStep));
                 if (number != 0)
@@ -127,9 +127,9 @@
             g.DrawEllipse(_circlePen, squareX, squareY, squareSize, squareSize);
         }
 
-        private static void DrawCutter(Form form, Graphics g, float centerY, float C)
+        private static void DrawCutter(Panel panel, Graphics g, float centerY, float C)
         {
-            g.DrawLine(_cutterPen, 0, centerY + _gridStep * 2 * -C, form.ClientSize.Width, centerY + _gridStep * 2 * -C);
+            g.DrawLine(_cutterPen, 0, centerY + _gridStep * 2 * -C, panel.ClientSize.Width, centerY + _gridStep * 2 * -C);
         }
         private static void DrawPoint(Graphics g, float startX, float startY, float gridStep)
         {

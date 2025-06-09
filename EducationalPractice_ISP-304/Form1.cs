@@ -23,16 +23,16 @@ namespace EducationalPractice_ISP_304
 
             SegmentAreaCalculator.CalculateMonteCarloCegment(radius);
 
-            this.Invalidate();
+            panel1.Invalidate();
         }
 
-        protected override void OnPaint(PaintEventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
             if (invalidated)
                 return;
 
             invalidated = true;
-            MonteCarloView.RenderToBuffer(this, e, radius, offset, C);
+            MonteCarloView.RenderToBuffer(panel1, e, radius, offset, C);
 
             base.OnPaint(e);
         }

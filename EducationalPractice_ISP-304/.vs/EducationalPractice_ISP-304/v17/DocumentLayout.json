@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|solutionrelative:scripts\\montecarloview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\EducationalPractice_ISP-304\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|c:\\users\\musat\\documents\\github\\educationalpractice_isp-304\\educationalpractice_isp-304\\scripts\\montecarlocalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|solutionrelative:scripts\\montecarlocalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|c:\\users\\musat\\documents\\github\\educationalpractice_isp-304\\educationalpractice_isp-304\\scripts\\segmentareacalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|solutionrelative:scripts\\segmentareacalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|c:\\users\\musat\\documents\\github\\educationalpractice_isp-304\\educationalpractice_isp-304\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|c:\\users\\musat\\documents\\github\\educationalpractice_isp-304\\educationalpractice_isp-304\\scripts\\segmentareacalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|solutionrelative:scripts\\segmentareacalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\EducationalPractice_ISP-304\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|c:\\users\\musat\\documents\\github\\educationalpractice_isp-304\\educationalpractice_isp-304\\scripts\\montecarlocalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B81BA9A8-4C16-41EA-87C1-9F2D97F09F86}|EducationalPractice_ISP-304.csproj|solutionrelative:scripts\\montecarlocalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +34,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "SegmentAreaCalculator.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\EducationalPractice_ISP-304\\Scripts\\SegmentAreaCalculator.cs",
               "RelativeDocumentMoniker": "Scripts\\SegmentAreaCalculator.cs",
@@ -53,27 +53,27 @@
               "RelativeDocumentMoniker": "Scripts\\MonteCarloView.cs",
               "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\EducationalPractice_ISP-304\\Scripts\\MonteCarloView.cs",
               "RelativeToolTip": "Scripts\\MonteCarloView.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAAB0AAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-09T07:58:12.097Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\EducationalPractice_ISP-304\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\EducationalPractice_ISP-304\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAmwBkAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-09T07:44:37.5Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "MonteCarloCalculator.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\EducationalPractice_ISP-304\\Scripts\\MonteCarloCalculator.cs",
               "RelativeDocumentMoniker": "Scripts\\MonteCarloCalculator.cs",
@@ -86,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\EducationalPractice_ISP-304\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
