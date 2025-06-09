@@ -35,6 +35,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(982, 953);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";

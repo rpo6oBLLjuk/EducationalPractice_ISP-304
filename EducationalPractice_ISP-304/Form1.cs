@@ -6,8 +6,12 @@ namespace EducationalPractice_ISP_304
     {
 
         private PointF offset = new(0, 0);
-        private float radius = 4;
-        private int count = 10000;
+        private float radius = 5;
+        private float C = 3;
+
+        private int count = 1_000_000;
+
+        private bool invalidated = false;
 
 
         public Form1()
@@ -15,12 +19,20 @@ namespace EducationalPractice_ISP_304
             InitializeComponent();
             DoubleBuffered = true;
 
-            MonteCarloCalculator.GenerateRandomPoints(radius, count);
+            MonteCarloCalculator.GenerateRandomPoints(radius, count, offset.Y, C);
+
+            SegmentAreaCalculator.CalculateMonteCarloCegment(radius);
+
+            this.Invalidate();
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            MonteCarloView.RenderToBuffer(this, e, radius, offset);
+            if (invalidated)
+                return;
+
+            invalidated = true;
+            MonteCarloView.RenderToBuffer(this, e, radius, offset, C);
 
             base.OnPaint(e);
         }
