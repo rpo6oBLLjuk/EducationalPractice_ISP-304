@@ -8,7 +8,7 @@
         public static List<PointF> ExcludedPoints { get; private set; } = new();
         public static List<PointF> CuttedPoints { get; private set; } = new();
 
-        public static void GenerateRandomPoints(float radius, int count, float offsetY, float C)
+        public static void GenerateRandomPoints(float radius, int count, float offsetX, float C)
         {
             Random random = new();
 
@@ -28,7 +28,7 @@
             }
 
             CalculateIncludedPoints(radius);
-            CalculateCuttedPoints(radius, offsetY, C);
+            CalculateCuttedPoints(radius, offsetX, C);
         }
 
         private static void CalculateIncludedPoints(float radius)
@@ -45,14 +45,14 @@
             }
         }
 
-        private static void CalculateCuttedPoints(float radius, float offsetY, float C)
+        private static void CalculateCuttedPoints(float radius, float offsetX, float C)
         {
             foreach (PointF point in IncludedPoints)
             {
-                float pointX = -(point.X - radius);
-                float pointY = -(point.Y - radius);
+                float pointX = (point.X - radius);
+                float pointY = (point.Y - radius);
 
-                if(pointY + offsetY < C)
+                if(pointX + offsetX < C)
                 {
                     CuttedPoints.Add(point);
                 }

@@ -55,7 +55,7 @@
             DrawGrid(panel, g, centerX, centerY);
 
             DrawAxis(panel, g, centerX, centerY);
-            DrawCutter(panel, g, centerY, C);
+            DrawCutter(panel, g, centerX, C);
             DrawCoordinateNumbers(panel, g, centerX, centerY);
         }
 
@@ -128,9 +128,9 @@
             g.DrawEllipse(_circlePen, squareX, squareY, squareSize, squareSize);
         }
 
-        private static void DrawCutter(Panel panel, Graphics g, float centerY, float C)
+        private static void DrawCutter(Panel panel, Graphics g, float centerX, float C)
         {
-            g.DrawLine(_cutterPen, 0, centerY + _gridStep * 2 * -C, panel.ClientSize.Width, centerY + _gridStep * 2 * -C);
+            g.DrawLine(_cutterPen, centerX + _gridStep * 2 * C, 0, centerX + _gridStep * 2 * C, panel.Height);
         }
         private static void DrawPoint(Graphics g, float startX, float startY, float gridStep)
         {

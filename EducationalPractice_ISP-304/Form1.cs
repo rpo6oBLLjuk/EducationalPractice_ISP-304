@@ -84,7 +84,7 @@ namespace EducationalPractice_ISP_304
 
         private void GenerateRandomPoints()
         {
-            MonteCarloCalculator.GenerateRandomPoints(radius, pointsCount, offset.Y, C);
+            MonteCarloCalculator.GenerateRandomPoints(radius, pointsCount, offset.X, C);
             panel1.Invalidate();
 
             var squares = SegmentAreaCalculator.CalculateMonteCarloCegment(radius);
