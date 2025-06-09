@@ -1,17 +1,16 @@
 using EducationalPractice_ISP_304.Scripts;
 using System.Reflection;
-using System.Windows.Forms;
 
 namespace EducationalPractice_ISP_304
 {
     public partial class Form1 : Form
     {
 
-        private PointF offset = new(0, 0);
-        private float radius = 5;
-        private float C = 3;
+        private PointF offset = new(-3, 1);
+        private float radius = 2;
+        private float C = -2;
 
-        private int pointsCount = 1_25_000;
+        private int pointsCount = 100_000;
 
         private int gridStep;
 
@@ -40,7 +39,6 @@ namespace EducationalPractice_ISP_304
 
             GenerateRandomPoints();
 
-            SegmentAreaCalculator.CalculateMonteCarloCegment(radius);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -88,6 +86,10 @@ namespace EducationalPractice_ISP_304
         {
             MonteCarloCalculator.GenerateRandomPoints(radius, pointsCount, offset.Y, C);
             panel1.Invalidate();
+
+            var squares = SegmentAreaCalculator.CalculateMonteCarloCegment(radius);
+            realSquareLabel.Text = $"Real Square: {squares.realSquare:F6}";
+            MonteCarloSquare.Text = $"Monte Carlo Square: {squares.monteCarloSquare:F6}";
         }
     }
 }

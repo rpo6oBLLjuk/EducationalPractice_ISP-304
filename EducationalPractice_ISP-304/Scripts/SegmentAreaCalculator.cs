@@ -2,14 +2,14 @@
 {
     public static class SegmentAreaCalculator
     {
-        public static double CalculateMonteCarloCegment(float radius)
+        public static (double realSquare, double monteCarloSquare) CalculateMonteCarloCegment(float radius)
         {
             double defaultCircleS = Math.PI * Math.Pow(radius, 2);
-            double monteCarloCircleS = MonteCarloCalculator.IncludedPoints.Count / (double)MonteCarloCalculator.Points.Count * 100;
+            double monteCarloCircleS = MonteCarloCalculator.IncludedPoints.Count / (double)MonteCarloCalculator.Points.Count * Math.Pow(radius * 2, 2);
 
-            MessageBox.Show($"Default: {defaultCircleS}\nMonteCarlo: {monteCarloCircleS:F6}");
 
-            return 0;
+            //double realCirclesS = Math.Pow(radius, 2) / 2 *;
+            return (defaultCircleS, monteCarloCircleS);
         }
     }
 }

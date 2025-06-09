@@ -44,6 +44,8 @@
             radiusSlider = new TrackBar();
             radiusLabel = new Label();
             label1 = new Label();
+            realSquareLabel = new Label();
+            MonteCarloSquare = new Label();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cTrackbar).BeginInit();
@@ -229,11 +231,31 @@
             label1.Text = "Control panel";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // realSquareLabel
+            // 
+            realSquareLabel.AutoSize = true;
+            realSquareLabel.Location = new Point(21, 868);
+            realSquareLabel.Name = "realSquareLabel";
+            realSquareLabel.Size = new Size(91, 20);
+            realSquareLabel.TabIndex = 2;
+            realSquareLabel.Text = "Real Square:";
+            // 
+            // MonteCarloSquare
+            // 
+            MonteCarloSquare.AutoSize = true;
+            MonteCarloSquare.Location = new Point(21, 903);
+            MonteCarloSquare.Name = "MonteCarloSquare";
+            MonteCarloSquare.Size = new Size(144, 20);
+            MonteCarloSquare.TabIndex = 3;
+            MonteCarloSquare.Text = "Monte Carlo Square:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1282, 953);
+            Controls.Add(MonteCarloSquare);
+            Controls.Add(realSquareLabel);
             Controls.Add(panel2);
             Controls.Add(panel1);
             DoubleBuffered = true;
@@ -253,6 +275,7 @@
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)radiusSlider).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -273,5 +296,7 @@
         private Panel panel6;
         public TrackBar cTrackbar;
         private Label cLabel;
+        private Label realSquareLabel;
+        private Label MonteCarloSquare;
     }
 }
