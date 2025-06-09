@@ -2,8 +2,7 @@
 {
     public static class MonteCarloView
     {
-        private static readonly float _gridStep = 40;
-        private static readonly Size _viewSize = new(900, 900); 
+        public static float _gridStep = 25;
 
         private static readonly Pen _gridPen = new(Color.LightGray, 1);
         private static readonly Pen _axisPen = new(Color.Black, 2);
@@ -22,9 +21,11 @@
 
 
 
-        public static void RenderToBuffer(Panel panel, PaintEventArgs e, float radius, PointF offset, float C)
+        public static void RenderToBuffer(Panel panel, PaintEventArgs e, float gridStep, float radius, PointF offset, float C)
         {
             e.Graphics.Clear(Color.White);
+
+            _gridStep = gridStep;
 
             //Size panelSize = panel.Size;
             //panel.Size = _viewSize;

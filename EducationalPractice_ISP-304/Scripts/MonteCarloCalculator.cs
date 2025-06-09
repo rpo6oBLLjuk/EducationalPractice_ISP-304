@@ -13,6 +13,11 @@
             Random random = new();
 
             Points.Clear();
+            IncludedPoints.Clear();
+            ExcludedPoints.Clear();
+            CuttedPoints.Clear();
+
+
             Points = new List<PointF>(count);
 
             for (int i = 0; i < count; i++)
