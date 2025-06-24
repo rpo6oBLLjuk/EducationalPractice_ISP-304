@@ -1,0 +1,338 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\forms\\analysisform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\forms\\analysisform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\utilites\\view\\analysisview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\utilites\\view\\analysisview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\database\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\database\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\database\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\database\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\forms\\aboutprogramform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\forms\\aboutprogramform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\forms\\analysisform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\forms\\analysisform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\forms\\aboutprogramform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\forms\\aboutprogramform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\models\\circleparams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\models\\circleparams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\utilites\\calculators\\statisticcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\utilites\\calculators\\statisticcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\forms\\datamanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\forms\\datamanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\utilites\\view\\montecarloview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\utilites\\view\\montecarloview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\forms\\splashscreenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\forms\\splashscreenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\forms\\splashscreenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\forms\\splashscreenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\models\\circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\models\\circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\utilites\\pointsgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\utilites\\pointsgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\monte-karlo\\monte-karlo\\forms\\datamanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\forms\\datamanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Database\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Database\\DatabaseHelper.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Database\\DatabaseHelper.cs",
+              "RelativeToolTip": "Monte-Karlo\\Database\\DatabaseHelper.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T09:22:27.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Database\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Database\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Database\\AppDbContext.cs",
+              "RelativeToolTip": "Monte-Karlo\\Database\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T09:22:23.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AnalysisView.cs",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Utilites\\View\\AnalysisView.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Utilites\\View\\AnalysisView.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Utilites\\View\\AnalysisView.cs",
+              "RelativeToolTip": "Monte-Karlo\\Utilites\\View\\AnalysisView.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAB0AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T09:21:41.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StatisticCalculator.cs",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Utilites\\Calculators\\StatisticCalculator.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Utilites\\Calculators\\StatisticCalculator.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Utilites\\Calculators\\StatisticCalculator.cs",
+              "RelativeToolTip": "Monte-Karlo\\Utilites\\Calculators\\StatisticCalculator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T09:18:17.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AnalysisForm.cs",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\AnalysisForm.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Forms\\AnalysisForm.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\AnalysisForm.cs",
+              "RelativeToolTip": "Monte-Karlo\\Forms\\AnalysisForm.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAJYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T09:18:06.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Program.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Program.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Program.cs",
+              "RelativeToolTip": "Monte-Karlo\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T08:51:29.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AboutProgramForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\AboutProgramForm.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Forms\\AboutProgramForm.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\AboutProgramForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "Monte-Karlo\\Forms\\AboutProgramForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T08:38:08.035Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DataManagementForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\DataManagementForm.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Forms\\DataManagementForm.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\DataManagementForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "Monte-Karlo\\Forms\\DataManagementForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T08:36:07.752Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AnalysisForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\AnalysisForm.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Forms\\AnalysisForm.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\AnalysisForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "Monte-Karlo\\Forms\\AnalysisForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T08:35:57.29Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AboutProgramForm.cs",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\AboutProgramForm.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Forms\\AboutProgramForm.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\AboutProgramForm.cs",
+              "RelativeToolTip": "Monte-Karlo\\Forms\\AboutProgramForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T08:32:47.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SplashScreenForm.cs",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\SplashScreenForm.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Forms\\SplashScreenForm.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\SplashScreenForm.cs",
+              "RelativeToolTip": "Monte-Karlo\\Forms\\SplashScreenForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T07:57:34.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SplashScreenForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\SplashScreenForm.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Forms\\SplashScreenForm.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\SplashScreenForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "Monte-Karlo\\Forms\\SplashScreenForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T07:57:30.882Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PointsGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Utilites\\PointsGenerator.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Utilites\\PointsGenerator.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Utilites\\PointsGenerator.cs",
+              "RelativeToolTip": "Monte-Karlo\\Utilites\\PointsGenerator.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAmwEIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T06:40:23.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DataManagementForm.cs",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\DataManagementForm.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Forms\\DataManagementForm.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\DataManagementForm.cs",
+              "RelativeToolTip": "Monte-Karlo\\Forms\\DataManagementForm.cs",
+              "ViewState": "AgIAALoAAAAAAAAAAAAEwB4BAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T06:40:04.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MonteCarloView.cs",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Utilites\\View\\MonteCarloView.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Utilites\\View\\MonteCarloView.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Utilites\\View\\MonteCarloView.cs",
+              "RelativeToolTip": "Monte-Karlo\\Utilites\\View\\MonteCarloView.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T06:39:36.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CircleParams.cs",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Models\\CircleParams.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Models\\CircleParams.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Models\\CircleParams.cs",
+              "RelativeToolTip": "Monte-Karlo\\Models\\CircleParams.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T06:39:16.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Circle.cs",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Models\\Circle.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Models\\Circle.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Models\\Circle.cs",
+              "RelativeToolTip": "Monte-Karlo\\Models\\Circle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T06:33:12.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\MainForm.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Forms\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "Monte-Karlo\\Forms\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T06:24:18.066Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\MainForm.cs",
+              "RelativeDocumentMoniker": "Monte-Karlo\\Forms\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Monte-Karlo\\Forms\\MainForm.cs",
+              "RelativeToolTip": "Monte-Karlo\\Forms\\MainForm.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAmwLIAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T06:24:11.612Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
