@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3INr+q8QpA8=",
+  "dgSpecHash": "1343ylYBx2U=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Musat\\Documents\\GitHub\\Monte-Karlo\\Test\\Test.csproj",
+  "projectFilePath": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Test\\Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Musat\\.nuget\\packages\\microsoft.data.sqlite.core\\9.0.6\\microsoft.data.sqlite.core.9.0.6.nupkg.sha512",
     "C:\\Users\\Musat\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.6\\microsoft.entityframeworkcore.9.0.6.nupkg.sha512",

@@ -16,6 +16,7 @@ namespace Monte_Karlo.Utilites.View
         // Цвета элементов
         private static readonly Color _analyticalColor = Color.Blue;
         private static readonly Color _pointsColor = Color.Green;
+        private static readonly Color _pointsLinesColor = Color.Black;
         private static readonly Color _meanColor = Color.Red;
         private static readonly Color _medianColor = Color.Purple;
         private static readonly Color _minMaxColor = Color.Orange;
@@ -137,7 +138,14 @@ namespace Monte_Karlo.Utilites.View
             float xStep = width / (count - 1);
             float yScale = height / (float)yRange;
 
+
+            float currentX = 0;
+            float currentY = 0;
+            float previousX;
+            float previousY;
+
             // Используем один экземпляр кисти для всех точек
+            Pen pointsLinesPen = new(_pointsLinesColor, 1);
             using (SolidBrush brush = new SolidBrush(_pointsColor))
             {
                 float diameter = 2 * _pointRadius;
@@ -146,9 +154,20 @@ namespace Monte_Karlo.Utilites.View
                 {
                     try
                     {
-                        float x = left + i * xStep;
-                        float y = bottom - (float)((results[i] - yMin) * yScale);
-                        g.FillEllipse(brush, x - _pointRadius, y - _pointRadius, diameter, diameter);
+                        previousX = currentX;
+                        previousY = currentY;
+
+                        currentX = left + i * xStep;
+                        currentY = bottom - (float)((results[i] - yMin) * yScale);
+
+                        if (i == 0)
+                        {
+                            previousX = currentX;
+                            previousY = currentY;
+                        }
+
+                        g.FillEllipse(brush, currentX - _pointRadius, currentY - _pointRadius, diameter, diameter);
+                        g.DrawLine(pointsLinesPen, new PointF(previousX, previousY), new PointF(currentX, currentY));
                     }
                     catch (DivideByZeroException ex)
                     {

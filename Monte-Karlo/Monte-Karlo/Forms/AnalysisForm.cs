@@ -45,13 +45,13 @@ namespace Monte_Karlo
         {
             dataGridViewResults.Columns.Clear();
             AddColumn("Id", "№", "Id", true, "D2", null, DataGridViewAutoSizeColumnMode.DisplayedCells);
-            AddColumn("PointsInCircle", "Точек в окружности", "PointsInCircle", true, "N0");
-            AddColumn("PointsInSegment", "Точек в сегменте", "PointsInSegment", true, "N0");
+            AddColumn("PointsInCircle", "Точек в окружности", "PointsInCircle", true, "N0", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
+            AddColumn("PointsInSegment", "Точек в сегменте", "PointsInSegment", true, "N0", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
             AddColumn("AnalyticalResult", "Аналитический резльтат", "AnalyticalResult", true, "F4",
-                     _currentParams?.AnalyticalResult.ToString("F4") ?? "N/A");
-            AddColumn("MonteCarloResult", "Результат Монте-Карло", "MonteCarloResult", true, "F4");
-            AddColumn("AbsoluteError", "Абсолютная ошибка", "AbsoluteError", true, "F2");
-            AddColumn("RelativeError", "Ошибка (%)", "RelativeError", true, "F2");
+                     _currentParams?.AnalyticalResult.ToString("F4") ?? "N/A", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
+            AddColumn("MonteCarloResult", "Результат Монте-Карло", "MonteCarloResult", true, "F4", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
+            AddColumn("AbsoluteError", "Абсолютная ошибка", "AbsoluteError", true, "F2", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
+            AddColumn("RelativeError", "Ошибка (%)", "RelativeError", true, "F2", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
 
             if (_currentParams != null && _currentParams.Results.Any())
             {
@@ -120,12 +120,6 @@ namespace Monte_Karlo
             }
 
             dataGridViewResults.Columns.Add(col);
-
-            dataGridViewResults.Columns.Cast<DataGridViewColumn>()
-                .ToList()
-                .ForEach(c => c.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill);
-
-            this.Invalidate(true);
         }
 
         private void DataGridViewResults_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

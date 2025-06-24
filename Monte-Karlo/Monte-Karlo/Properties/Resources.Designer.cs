@@ -59,15 +59,5 @@ namespace Monte_Karlo.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ChatGPT_Image_18_июн__2025_г___13_23_30 {
-            get {
-                object obj = ResourceManager.GetObject("ChatGPT Image 18 июн. 2025 г., 13_23_30", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
