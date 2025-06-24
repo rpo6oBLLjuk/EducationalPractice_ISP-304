@@ -49,8 +49,6 @@ namespace Monte_Karlo
             label2 = new Label();
             label1 = new Label();
             dataGridViewResults = new DataGridView();
-            tabPageGraph = new TabPage();
-            paintPanel = new Panel();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -58,6 +56,8 @@ namespace Monte_Karlo
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
+            tabPageGraph = new TabPage();
+            paintPanel = new Panel();
             tabControl1.SuspendLayout();
             tabPageStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
@@ -284,29 +284,6 @@ namespace Monte_Karlo
             dataGridViewResults.CellFormatting += DataGridViewResults_CellFormatting;
             dataGridViewResults.ColumnHeaderMouseClick += DataGridViewResults_ColumnHeaderMouseClick;
             // 
-            // tabPageGraph
-            // 
-            tabPageGraph.Controls.Add(paintPanel);
-            tabPageGraph.Location = new Point(4, 29);
-            tabPageGraph.Margin = new Padding(3, 4, 3, 4);
-            tabPageGraph.Name = "tabPageGraph";
-            tabPageGraph.Padding = new Padding(3, 4, 3, 4);
-            tabPageGraph.Size = new Size(906, 567);
-            tabPageGraph.TabIndex = 1;
-            tabPageGraph.Text = "Графический анализ";
-            tabPageGraph.UseVisualStyleBackColor = true;
-            // 
-            // paintPanel
-            // 
-            paintPanel.BackColor = Color.White;
-            paintPanel.Dock = DockStyle.Fill;
-            paintPanel.Location = new Point(3, 4);
-            paintPanel.Margin = new Padding(3, 4, 3, 4);
-            paintPanel.Name = "paintPanel";
-            paintPanel.Size = new Size(900, 559);
-            paintPanel.TabIndex = 3;
-            paintPanel.Paint += paintPanel_Paint;
-            // 
             // Column1
             // 
             Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -362,6 +339,29 @@ namespace Monte_Karlo
             Column7.MinimumWidth = 6;
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
+            // 
+            // tabPageGraph
+            // 
+            tabPageGraph.Controls.Add(paintPanel);
+            tabPageGraph.Location = new Point(4, 29);
+            tabPageGraph.Margin = new Padding(3, 4, 3, 4);
+            tabPageGraph.Name = "tabPageGraph";
+            tabPageGraph.Padding = new Padding(3, 4, 3, 4);
+            tabPageGraph.Size = new Size(906, 567);
+            tabPageGraph.TabIndex = 1;
+            tabPageGraph.Text = "Графический анализ";
+            tabPageGraph.UseVisualStyleBackColor = true;
+            // 
+            // paintPanel
+            // 
+            paintPanel.BackColor = Color.White;
+            paintPanel.Dock = DockStyle.Fill;
+            paintPanel.Location = new Point(3, 4);
+            paintPanel.Margin = new Padding(3, 4, 3, 4);
+            paintPanel.Name = "paintPanel";
+            paintPanel.Size = new Size(900, 559);
+            paintPanel.TabIndex = 3;
+            paintPanel.Paint += paintPanel_Paint;
             // 
             // AnalysisForm
             // 

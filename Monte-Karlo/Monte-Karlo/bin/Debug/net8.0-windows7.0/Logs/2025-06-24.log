@@ -10405,3 +10405,11 @@ AnalyticalResult: 10,109631217141658, ResultsCount: 1565
 Id: 1565, PointsInCircle: 78549, PointsInSegment: 63197,
 MonteCarloResult: 10,11152, CircleParamsId: 1
 [12:59:30] Приложение закрыто
+[13:17:44] Приложение запущено
+[13:17:44] Сделаны расчёты с параметрами: CircleCenter: {X=-3,Y=1}, Radius: 2, C: -2 и количеством точек 100000
+[13:17:45] Сохранение:
+Id: 1, CenterX: -3, CenterY: 1, Radius: 2, C: -2, TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658, ResultsCount: 1566
+Id: 1566, PointsInCircle: 78524, PointsInSegment: 63380,
+MonteCarloResult: 10,1408, CircleParamsId: 1
+[13:17:53] Приложение закрыто
