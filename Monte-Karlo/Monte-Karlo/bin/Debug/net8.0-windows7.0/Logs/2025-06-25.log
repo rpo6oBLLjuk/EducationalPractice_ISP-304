@@ -47548,3 +47548,55 @@ ResultsCount: 25
 Id: 25, Points: 100000, PointsInSegment: 63143, 
 MonteCarloResult: 10,10288, CircleParamsId: 1
 [13:15:05] Приложение закрыто
+[20:42:18] Приложение запущено
+[20:42:19] Сделаны расчёты с параметрами: CircleCenter: {X=-3,Y=1}, Radius: 2, C: -2 и количеством точек 100000
+[20:42:19] Сохранение:
+Id: 1,
+TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658,
+ResultsCount: 26
+Id: 26, Points: 100000, PointsInSegment: 63282, 
+MonteCarloResult: 10,12512, CircleParamsId: 1
+[20:42:33] Приложение закрыто
+[20:48:44] Приложение запущено
+[20:49:46] Сделаны расчёты с параметрами: CircleCenter: {X=-3,Y=1}, Radius: 2, C: -2 и количеством точек 100000
+[20:49:46] Сохранение:
+Id: 1,
+TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658,
+ResultsCount: 27
+Id: 27, Points: 100000, PointsInSegment: 63162, 
+MonteCarloResult: 10,10592, CircleParamsId: 1
+[21:22:11] Приложение запущено
+[21:22:12] Сделаны расчёты с параметрами: CircleCenter: {X=-3,Y=1}, Radius: 2, C: -2 и количеством точек 100000
+[21:22:13] Сохранение:
+Id: 1,
+TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658,
+ResultsCount: 28
+Id: 28, Points: 100000, PointsInSegment: 63275, 
+MonteCarloResult: 10,124, CircleParamsId: 1
+[21:22:27] Сделаны расчёты с параметрами: CircleCenter: {X=-3,Y=1}, Radius: 2, C: -2 и количеством точек 100000
+[21:22:27] Сохранение:
+Id: 1,
+TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658,
+ResultsCount: 29
+Id: 29, Points: 100000, PointsInSegment: 63179, 
+MonteCarloResult: 10,10864, CircleParamsId: 1
+[21:22:28] Приложение закрыто
+[21:56:48] Приложение запущено
+[21:56:50] Сделаны расчёты с параметрами: CircleCenter: {X=-3,Y=1}, Radius: 2, C: -2 и количеством точек 100000
+[21:56:50] Сохранение:
+Id: 1,
+TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658,
+ResultsCount: 30
+Id: 30, Points: 100000, PointsInSegment: 63019, 
+MonteCarloResult: 10,08304, CircleParamsId: 1
+[21:56:55] Удаление:
+Id: 1,
+TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658,
+ResultsCount: 30
+[21:56:58] Приложение закрыто

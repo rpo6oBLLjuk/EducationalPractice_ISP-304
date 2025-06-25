@@ -50,7 +50,7 @@ namespace Monte_Karlo
             AddColumn("AnalyticalResult", "Аналитический резльтат", "AnalyticalResult", true, "F4",
                      _currentParams?.AnalyticalResult.ToString("F4") ?? "N/A", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
             AddColumn("MonteCarloResult", "Результат Монте-Карло", "MonteCarloResult", true, "F4", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
-            AddColumn("AbsoluteError", "Абсолютная ошибка", "AbsoluteError", true, "F2", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
+            AddColumn("AbsoluteError", "Абсолютная погрешность", "AbsoluteError", true, "F2", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
             AddColumn("RelativeError", "Ошибка (%)", "RelativeError", true, "F2", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
 
             if (_currentParams != null && _currentParams.Results.Any())

@@ -303,7 +303,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "Основное окно";
+            Text = "Калькулятор";
             WindowState = FormWindowState.Maximized;
             FormClosed += MainForm_FormClosed;
             paintPanel.ResumeLayout(false);

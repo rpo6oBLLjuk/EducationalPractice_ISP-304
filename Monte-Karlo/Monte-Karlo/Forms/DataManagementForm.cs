@@ -62,32 +62,6 @@ namespace Monte_Karlo.Forms
             }
         }
 
-        //private void btnBackup_Click(object sender, EventArgs e)
-        //{
-        //    using (var saveDialog = new SaveFileDialog())
-        //    {
-        //        saveDialog.Filter = "SQLite база данных|*.db";
-        //        saveDialog.Title = "Создание резервной копии";
-        //        saveDialog.FileName = $"MonteCarlo_Backup_{DateTime.Now:yyyyMMdd_HHmmss}.db";
-
-        //        if (saveDialog.ShowDialog() == DialogResult.OK)
-        //        {
-        //            try
-        //            {
-        //                databaseHelper.CreateBackup(saveDialog.FileName);
-        //                lblStatus.Text = $"Резервная копия создана: {Path.GetFileName(saveDialog.FileName)}";
-        //                MessageBox.Show("Резервное копирование выполнено успешно!", "Успех",
-        //                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                MessageBox.Show($"Ошибка резервного копирования: {ex.Message}", "Ошибка",
-        //                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //                logger.LogException(ex, "Ошибка резервного копирования");
-        //            }
-        //        }
-        //    }
-        //}
 
         private void btnClearAll_Click(object sender, EventArgs e)
         {
@@ -121,10 +95,8 @@ namespace Monte_Karlo.Forms
             }
 
             var selectedId = (int)dgvExperiments.SelectedRows[0].Cells["ID"].Value;
-            var centerX = dgvExperiments.SelectedRows[0].Cells["Центр_X"].Value;
-            var centerY = dgvExperiments.SelectedRows[0].Cells["Центр_Y"].Value;
 
-            if (MessageBox.Show($"Вы уверены, что хотите удалить все данные для эксперимента с центром ({centerX}, {centerY})?",
+            if (MessageBox.Show($"Вы уверены, что хотите удалить все данные для эксперимента?",
                     "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 try
