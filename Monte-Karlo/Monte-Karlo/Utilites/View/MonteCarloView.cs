@@ -13,8 +13,8 @@ namespace Monte_Karlo.Utilites.View
                 _step = _gridStep * 2;
             }
         }
-        private int _gridStep = 40;
-        private int _step = 80;
+        private int _gridStep = 100;
+        private int _step = 200;
 
         private static readonly int _viewPointsLimit = 100_000;
 
@@ -22,12 +22,12 @@ namespace Monte_Karlo.Utilites.View
         private static readonly Pen _gridPen = new(Color.Gray, 1);
         private static readonly Pen _axisPen = new(Color.FromArgb(200, 200, 200), 2); //White
 
-        private static readonly Pen _cutterPen = new(Color.RebeccaPurple, 4);
+        private static readonly Pen _cutterPen = new(Color.Red, 4);
 
-        private static readonly Pen _circlePen = new(Color.Red, 2);
-        private static readonly Pen _squarePen = new(Color.Blue, 2);
+        private static readonly Pen _circlePen = new(Color.Yellow, 2);
+        private static readonly Pen _squarePen = new(Color.Red, 2);
 
-        private static readonly Pen _cuttedPointsBrush = new(Color.LightGreen, 1);
+        private static readonly Pen _cuttedPointsBrush = new(Color.LawnGreen, 1);
 
         private static readonly Color _textColor = Color.FromArgb(200, 200, 200); //White
         private static readonly Brush _textBrush = new SolidBrush(_textColor);

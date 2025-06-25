@@ -43,11 +43,6 @@ namespace Monte_Karlo.Forms
                     .Select(cp => new
                     {
                         ID = cp.Id,
-                        Центр_X = cp.CenterX,
-                        Центр_Y = cp.CenterY,
-                        Радиус = cp.Radius,
-                        Направление = "Вертикально",
-                        Параметр_C = cp.C,
                         Всего_точек = cp.TotalPoints,
                         Аналитический_результат = cp.AnalyticalResult,
                         Количество_экспериментов = cp.Results.Count
@@ -67,32 +62,32 @@ namespace Monte_Karlo.Forms
             }
         }
 
-        private void btnBackup_Click(object sender, EventArgs e)
-        {
-            using (var saveDialog = new SaveFileDialog())
-            {
-                saveDialog.Filter = "SQLite база данных|*.db";
-                saveDialog.Title = "Создание резервной копии";
-                saveDialog.FileName = $"MonteCarlo_Backup_{DateTime.Now:yyyyMMdd_HHmmss}.db";
+        //private void btnBackup_Click(object sender, EventArgs e)
+        //{
+        //    using (var saveDialog = new SaveFileDialog())
+        //    {
+        //        saveDialog.Filter = "SQLite база данных|*.db";
+        //        saveDialog.Title = "Создание резервной копии";
+        //        saveDialog.FileName = $"MonteCarlo_Backup_{DateTime.Now:yyyyMMdd_HHmmss}.db";
 
-                if (saveDialog.ShowDialog() == DialogResult.OK)
-                {
-                    try
-                    {
-                        databaseHelper.CreateBackup(saveDialog.FileName);
-                        lblStatus.Text = $"Резервная копия создана: {Path.GetFileName(saveDialog.FileName)}";
-                        MessageBox.Show("Резервное копирование выполнено успешно!", "Успех",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Ошибка резервного копирования: {ex.Message}", "Ошибка",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        logger.LogException(ex, "Ошибка резервного копирования");
-                    }
-                }
-            }
-        }
+        //        if (saveDialog.ShowDialog() == DialogResult.OK)
+        //        {
+        //            try
+        //            {
+        //                databaseHelper.CreateBackup(saveDialog.FileName);
+        //                lblStatus.Text = $"Резервная копия создана: {Path.GetFileName(saveDialog.FileName)}";
+        //                MessageBox.Show("Резервное копирование выполнено успешно!", "Успех",
+        //                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                MessageBox.Show($"Ошибка резервного копирования: {ex.Message}", "Ошибка",
+        //                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //                logger.LogException(ex, "Ошибка резервного копирования");
+        //            }
+        //        }
+        //    }
+        //}
 
         private void btnClearAll_Click(object sender, EventArgs e)
         {
@@ -246,83 +241,6 @@ namespace Monte_Karlo.Forms
                             data.OrderByDescending(x => x.ID).ToList();
                         break;
                 }
-            }
-        }
-
-        private async void btn1000Experiments_Click(object sender, EventArgs e)
-        {
-            if (btn1000Experiments.Text == "Прервать")
-            {
-                _cts?.Cancel();
-                return;
-            }
-
-            if (dgvExperiments.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Выберите эксперимент для генерации", "Информация",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            string originalButtonText = btn1000Experiments.Text;
-            btn1000Experiments.Text = "Прервать";
-            IProgress<string> progress = new Progress<string>(s => lblStatus.Text = s);
-
-            try
-            {
-                _cts = new CancellationTokenSource();
-                var token = _cts.Token;
-                var selectedId = (int)dgvExperiments.SelectedRows[0].Cells["ID"].Value;
-                var circleParam = databaseHelper.GetDataById(selectedId);
-                var point = new Point((int)circleParam.CenterX, (int)circleParam.CenterY);
-                var circle = new Circle(point, (float)circleParam.Radius, (float)circleParam.C);
-                int pointsCount = circleParam.TotalPoints;
-                var pointsGenerator = new PointsGenerator();
-                int i = 0;
-                using Timer timer = new Timer();
-                timer.Interval = 100;
-                timer.Tick += (object? sender, EventArgs e) =>
-                {
-                    progress.Report($"Генерация эксперимента {i + 1}/1000...");
-                };
-                timer.Start();
-
-                for (i = 0; i < 1000; i++)
-                {
-                    token.ThrowIfCancellationRequested();
-                    progress.Report($"Генерация эксперимента {i + 1}/1000...");
-
-                    await pointsGenerator.GenerateRandomPointsAsync(circle, pointsCount, token);
-
-                    var currentPoints = pointsGenerator.GetCurrentPoints();
-                    var realSquare = Calculator.CalculateAnalyticArea(circle);
-                    var monteCarloSquare = Calculator.CalculateMonteCarloArea(
-                        circle.radius,
-                        currentPoints.Points.Count,
-                        currentPoints.CuttedPoints.Count);
-
-                    await Task.Run(() => 
-                    databaseHelper.SaveResults(
-                        circle,
-                        currentPoints,
-                        realSquare,
-                        monteCarloSquare));
-                }
-                timer.Stop();
-                MessageBox.Show("1000 экспериментов успешно сгенерированы!", "Готово");
-            }
-            catch (OperationCanceledException)
-            {
-                MessageBox.Show("Операция генерации прервана", "Оповещение");
-            }
-            finally
-            {
-                btn1000Experiments.Text = originalButtonText;
-                lblStatus.Text = "Готово";
-                LoadExperiments();
-
-                _cts?.Dispose();
-                _cts = null;
             }
         }
 

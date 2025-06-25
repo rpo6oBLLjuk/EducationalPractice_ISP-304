@@ -41,26 +41,17 @@ namespace Monte_Karlo.DataBase
         {
             using var context = new AppDbContext();
             int totalPoints = pointsData.Points.Count;
-            int pointsInCircle = pointsData.IncludedPoints.Count;
             int pointsInSegment = pointsData.CuttedPoints.Count;
 
             var circleParams = context.CircleParams
                 .Include(cp => cp.Results)
                 .FirstOrDefault(cp =>
-                    cp.CenterX == circle.circleCenter.X &&
-                    cp.CenterY == circle.circleCenter.Y &&
-                    cp.Radius == circle.radius &&
-                    cp.C == circle.C &&
                     cp.TotalPoints == totalPoints);
 
             if (circleParams == null)
             {
                 circleParams = new CircleParams
                 {
-                    CenterX = circle.circleCenter.X,
-                    CenterY = circle.circleCenter.Y,
-                    Radius = circle.radius,
-                    C = circle.C,
                     TotalPoints = totalPoints,
                     AnalyticalResult = analyticalResult
                 };
@@ -70,7 +61,7 @@ namespace Monte_Karlo.DataBase
             var result = new SimulationResult
             {
                 CircleParams = circleParams,
-                PointsInCircle = pointsInCircle,
+                Points = totalPoints,
                 PointsInSegment = pointsInSegment,
                 MonteCarloResult = monteCarloResult
             };
@@ -86,10 +77,6 @@ namespace Monte_Karlo.DataBase
             var query = context.CircleParams
                 .Include(cp => cp.Results)
                 .Where(cp =>
-                    cp.CenterX == circle.circleCenter.X &&
-                    cp.CenterY == circle.circleCenter.Y &&
-                    cp.Radius == circle.radius &&
-                    cp.C == circle.C &&
                     cp.TotalPoints == totalPoints);
             return query.FirstOrDefault();
         }
@@ -127,15 +114,15 @@ namespace Monte_Karlo.DataBase
             logger.Log($"Удаление:\n{experiment}");
         }
 
-        public string CreateBackup(string fileName) 
-        {
-            var currentDirectory = Directory.GetCurrentDirectory();
-            var sourcePath = Path.Combine(currentDirectory, "DataBase.db");
+        //public string CreateBackup(string fileName) 
+        //{
+        //    var currentDirectory = Directory.GetCurrentDirectory();
+        //    var sourcePath = Path.Combine(currentDirectory, "DataBase.db");
 
-            File.Copy(sourcePath, fileName, true);
-            string message = $"Резервная копия создана: {Path.GetFileName(fileName)}";
-            logger.Log(message);
-            return Path.GetFileName(fileName);
-        }
+        //    File.Copy(sourcePath, fileName, true);
+        //    string message = $"Резервная копия создана: {Path.GetFileName(fileName)}";
+        //    logger.Log(message);
+        //    return Path.GetFileName(fileName);
+        //}
     }
 }

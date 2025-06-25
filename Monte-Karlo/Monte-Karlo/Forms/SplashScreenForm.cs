@@ -15,7 +15,6 @@ namespace Monte_Karlo
         private void startButton_Click(object sender, EventArgs e)
         {
             var form = new MainForm();
-            form.WindowState = FormWindowState.Normal;
             form.Show();
             this.Hide();
         }

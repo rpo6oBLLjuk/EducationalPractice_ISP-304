@@ -1,32 +1,26 @@
 ﻿using Monte_Karlo.Models;
 using Monte_Karlo.Utilites.Calculators;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Drawing.Drawing2D;
 
 namespace Monte_Karlo.Utilites.View
 {
     public class AnalysisView
     {
         // Цвета элементов
-        private static readonly Color _analyticalColor = Color.Blue;
-        private static readonly Color _pointsColor = Color.Green;
-        private static readonly Color _pointsLinesColor = Color.Black;
-        private static readonly Color _meanColor = Color.Red;
-        private static readonly Color _medianColor = Color.Purple;
-        private static readonly Color _minMaxColor = Color.Orange;
+        private static readonly Color _analyticalColor = Color.LawnGreen;
+        private static readonly Color _pointsColor = Color.Black;
+        private static readonly Color _pointsLinesColor = Color.LightSlateGray;
+        private static readonly Color _meanColor = Color.Orange;
+        private static readonly Color _medianColor = Color.Blue;
+        private static readonly Color _minMaxColor = Color.Red;
         private static readonly Color _backgroundColor = Color.White;
         private static readonly Color _gridColor = Color.LightGray;
+        private static readonly Color _legendBackgroundColor = Color.LightGray;
         private static readonly Padding _padding = new Padding(50, 20, 70, 40);
         private static readonly double _percentYPadding = 0.1;
-        private static readonly System.Drawing.Font _textFont = SystemFonts.DefaultFont;
+        private static readonly Font _textFont = SystemFonts.DefaultFont;
         private static readonly Brush _textBrush = Brushes.Black;
-        private static readonly float _pointRadius = 4;
+        private static readonly float _pointRadius = 3;
 
         public void RenderAnalysis(Panel panel, PaintEventArgs e, CircleParams circleParams)
         {
@@ -44,6 +38,8 @@ namespace Monte_Karlo.Utilites.View
 
         private void OnPaint(Panel panel, Graphics g, CircleParams circleParams)
         {
+            g.SmoothingMode = SmoothingMode.HighQuality;
+
             List<double> mcResults = circleParams.Results.Select(r => r.MonteCarloResult).ToList();
             double analyticalValue = circleParams.AnalyticalResult;
 
@@ -64,10 +60,12 @@ namespace Monte_Karlo.Utilites.View
             DrawGrid(g, plotArea, mcResults.Count, yMin, yMax);
 
             DrawAnalyticalLine(g, plotArea, analyticalValue, yMin, yRange);
-            DrawMonteCarloPoints(g, plotArea, mcResults, yMin, yRange);
             DrawMeanLine(g, plotArea, mean, yMin, yRange);
             DrawMedianLine(g, plotArea, median, yMin, yRange);
             DrawMinMaxLines(g, plotArea, min, max, yMin, yRange);
+
+            DrawMonteCarloPoints(g, plotArea, mcResults, yMin, yRange);
+
             DrawLegend(g, plotArea, median);
         }
 
@@ -79,13 +77,13 @@ namespace Monte_Karlo.Utilites.View
 
             // Вертикальные линии (каждые 10% экспериментов)
             int step = Math.Max(1, pointsCount / 10);
-            for (int i = 0; i <= pointsCount; i += step)
+            for (int i = 0; i < pointsCount; i += step)
             {
                 float x = plotArea.Left + plotArea.Width * i / pointsCount;
                 g.DrawLine(girdPen, x, plotArea.Top, x, plotArea.Bottom);
 
                 // Подписи номеров экспериментов
-                string text = i.ToString();
+                string text = (i + 1).ToString();
                 SizeF textSize = g.MeasureString(text, _textFont);
                 float textX = x - textSize.Width / 2;
                 float textY = plotArea.Bottom - textSize.Height;
@@ -135,7 +133,7 @@ namespace Monte_Karlo.Utilites.View
             float bottom = area.Bottom;
 
             // Предварительно вычисляем часто используемые значения
-            float xStep = width / (count - 1);
+            float xStep = Math.Max(1f, count);
             float yScale = height / (float)yRange;
 
 
@@ -157,7 +155,7 @@ namespace Monte_Karlo.Utilites.View
                         previousX = currentX;
                         previousY = currentY;
 
-                        currentX = left + i * xStep;
+                        currentX = left + width * i / xStep;
                         currentY = bottom - (float)((results[i] - yMin) * yScale);
 
                         if (i == 0)
@@ -166,8 +164,23 @@ namespace Monte_Karlo.Utilites.View
                             previousY = currentY;
                         }
 
-                        g.FillEllipse(brush, currentX - _pointRadius, currentY - _pointRadius, diameter, diameter);
                         g.DrawLine(pointsLinesPen, new PointF(previousX, previousY), new PointF(currentX, currentY));
+                    }
+                    catch (DivideByZeroException ex)
+                    {
+                        MessageBox.Show("Слишком мало данных измерений (минимум 2)", "Оповещение");
+                        return; // Прерываем выполнение после ошибки
+                    }
+                }
+
+                for (int i = 0; i < count; i++)
+                {
+                    try
+                    {
+                        currentX = left + width * i / xStep;
+                        currentY = bottom - (float)((results[i] - yMin) * yScale);
+
+                        g.FillEllipse(brush, currentX - _pointRadius, currentY - _pointRadius, diameter, diameter);
                     }
                     catch (DivideByZeroException ex)
                     {
@@ -181,14 +194,14 @@ namespace Monte_Karlo.Utilites.View
         private void DrawMeanLine(Graphics g, Rectangle area, double value, double yMin, double yRange)
         {
             float y = area.Bottom - (float)((value - yMin) / yRange * area.Height);
-            g.DrawLine(new Pen(_meanColor, 3) { DashStyle = System.Drawing.Drawing2D.DashStyle.Dash },
+            g.DrawLine(new Pen(_meanColor, 3) { DashStyle = DashStyle.Dash },
                       area.Left, y, area.Right, y);
         }
 
         private void DrawMedianLine(Graphics g, Rectangle area, double value, double yMin, double yRange)
         {
             float y = area.Bottom - (float)((value - yMin) / yRange * area.Height);
-            g.DrawLine(new Pen(_medianColor, 3) { DashStyle = System.Drawing.Drawing2D.DashStyle.Dot },
+            g.DrawLine(new Pen(_medianColor, 3) { DashStyle = DashStyle.Dot },
                       area.Left, y, area.Right, y);
         }
 
@@ -208,6 +221,8 @@ namespace Monte_Karlo.Utilites.View
             float startX = area.Width - textSize.Width - boxWidth - 5;
             float startY = area.Top;
             float itemHeight = textSize.Height;
+
+            g.FillRectangle(new SolidBrush(_legendBackgroundColor), startX, startY, 235, itemHeight * 5);
 
             DrawLegendItem(g, "Аналитическое решение", _analyticalColor, startX, startY, boxWidth, itemHeight);
             DrawLegendItem(g, "Точки Монте-Карло", _pointsColor, startX, startY + itemHeight, boxWidth, itemHeight);

@@ -37,14 +37,12 @@ namespace Monte_Karlo.Forms
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
-            btnBackup = new Button();
             btnClearAll = new Button();
             btnClearSelected = new Button();
             btnanalysisOfResults = new Button();
             statusStrip = new StatusStrip();
             lblStatus = new ToolStripStatusLabel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            btn1000Experiments = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvExperiments).BeginInit();
             statusStrip.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -108,35 +106,24 @@ namespace Monte_Karlo.Forms
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
             // 
-            // btnBackup
-            // 
-            btnBackup.Dock = DockStyle.Fill;
-            btnBackup.Location = new Point(30, 10);
-            btnBackup.Margin = new Padding(30, 10, 30, 10);
-            btnBackup.Name = "btnBackup";
-            btnBackup.Size = new Size(221, 80);
-            btnBackup.TabIndex = 1;
-            btnBackup.Text = "Создать резервную копию";
-            btnBackup.Click += btnBackup_Click;
-            // 
             // btnClearAll
             // 
             btnClearAll.Dock = DockStyle.Fill;
-            btnClearAll.Location = new Point(311, 10);
+            btnClearAll.Location = new Point(30, 10);
             btnClearAll.Margin = new Padding(30, 10, 30, 10);
             btnClearAll.Name = "btnClearAll";
-            btnClearAll.Size = new Size(221, 80);
+            btnClearAll.Size = new Size(408, 80);
             btnClearAll.TabIndex = 2;
-            btnClearAll.Text = "Очистить все данные";
+            btnClearAll.Text = "Удалить все эксперименты";
             btnClearAll.Click += btnClearAll_Click;
             // 
             // btnClearSelected
             // 
             btnClearSelected.Dock = DockStyle.Fill;
-            btnClearSelected.Location = new Point(592, 10);
+            btnClearSelected.Location = new Point(498, 10);
             btnClearSelected.Margin = new Padding(30, 10, 30, 10);
             btnClearSelected.Name = "btnClearSelected";
-            btnClearSelected.Size = new Size(221, 80);
+            btnClearSelected.Size = new Size(408, 80);
             btnClearSelected.TabIndex = 3;
             btnClearSelected.Text = "Удалить эксперимент";
             btnClearSelected.Click += btnClearSelected_Click;
@@ -144,10 +131,10 @@ namespace Monte_Karlo.Forms
             // btnanalysisOfResults
             // 
             btnanalysisOfResults.Dock = DockStyle.Fill;
-            btnanalysisOfResults.Location = new Point(873, 10);
+            btnanalysisOfResults.Location = new Point(966, 10);
             btnanalysisOfResults.Margin = new Padding(30, 10, 30, 10);
             btnanalysisOfResults.Name = "btnanalysisOfResults";
-            btnanalysisOfResults.Size = new Size(221, 80);
+            btnanalysisOfResults.Size = new Size(410, 80);
             btnanalysisOfResults.TabIndex = 4;
             btnanalysisOfResults.Text = "Анализ результата";
             btnanalysisOfResults.Click += btnanalysisOfResults_Click;
@@ -169,17 +156,14 @@ namespace Monte_Karlo.Forms
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 5;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.Controls.Add(btn1000Experiments, 4, 0);
-            tableLayoutPanel1.Controls.Add(btnBackup, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnClearAll, 1, 0);
-            tableLayoutPanel1.Controls.Add(btnanalysisOfResults, 3, 0);
-            tableLayoutPanel1.Controls.Add(btnClearSelected, 2, 0);
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Controls.Add(btnClearAll, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnanalysisOfResults, 2, 0);
+            tableLayoutPanel1.Controls.Add(btnClearSelected, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Bottom;
             tableLayoutPanel1.Location = new Point(0, 722);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -187,17 +171,6 @@ namespace Monte_Karlo.Forms
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Size = new Size(1406, 100);
             tableLayoutPanel1.TabIndex = 6;
-            // 
-            // btn1000Experiments
-            // 
-            btn1000Experiments.Dock = DockStyle.Fill;
-            btn1000Experiments.Location = new Point(1154, 10);
-            btn1000Experiments.Margin = new Padding(30, 10, 30, 10);
-            btn1000Experiments.Name = "btn1000Experiments";
-            btn1000Experiments.Size = new Size(222, 80);
-            btn1000Experiments.TabIndex = 5;
-            btn1000Experiments.Text = "Провести 1000 эксперементов";
-            btn1000Experiments.Click += btn1000Experiments_Click;
             // 
             // DataManagementForm
             // 
@@ -207,7 +180,9 @@ namespace Monte_Karlo.Forms
             Controls.Add(statusStrip);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "DataManagementForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Управление экспериментами";
+            WindowState = FormWindowState.Maximized;
             FormClosed += DataManagementForm_FormClosed;
             Load += DataManagementForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvExperiments).EndInit();
@@ -221,7 +196,6 @@ namespace Monte_Karlo.Forms
         #endregion
 
         private DataGridView dgvExperiments;
-        private Button btnBackup;
         private Button btnClearAll;
         private Button btnClearSelected;
         private Button btnanalysisOfResults;
@@ -231,6 +205,5 @@ namespace Monte_Karlo.Forms
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
-        private Button btn1000Experiments;
     }
 }

@@ -45,7 +45,7 @@ namespace Monte_Karlo
         {
             dataGridViewResults.Columns.Clear();
             AddColumn("Id", "№", "Id", true, "D2", null, DataGridViewAutoSizeColumnMode.DisplayedCells);
-            AddColumn("PointsInCircle", "Точек в окружности", "PointsInCircle", true, "N0", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
+            AddColumn("PointsInCircle", "Всего Точек", "Points", true, "N0", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
             AddColumn("PointsInSegment", "Точек в сегменте", "PointsInSegment", true, "N0", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
             AddColumn("AnalyticalResult", "Аналитический резльтат", "AnalyticalResult", true, "F4",
                      _currentParams?.AnalyticalResult.ToString("F4") ?? "N/A", AutoSizeMode: DataGridViewAutoSizeColumnMode.Fill);
@@ -61,9 +61,9 @@ namespace Monte_Karlo
                     .Select(r => new
                     {
                         Id = ++id,
-                        r.PointsInCircle,
+                        r.Points,
                         r.PointsInSegment,
-                        AnalyticalResult = _currentParams.AnalyticalResult,
+                        _currentParams.AnalyticalResult,
                         r.MonteCarloResult,
                         AbsoluteError = Calculator.CalculateAbsoluteError(_currentParams.AnalyticalResult, r.MonteCarloResult).ToString(),
                         RelativeError = Calculator.CalculateRelativeError(_currentParams.AnalyticalResult, r.MonteCarloResult).ToString()
@@ -79,7 +79,6 @@ namespace Monte_Karlo
             }
         }
 
-        // Настраиваем цветовое форматирование для колонки с ошибкой
         private void DataGridViewResults_CellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
         {
             {

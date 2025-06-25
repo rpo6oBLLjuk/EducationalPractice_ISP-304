@@ -85,7 +85,7 @@
             label2.Name = "label2";
             label2.Size = new Size(319, 244);
             label2.TabIndex = 7;
-            label2.Text = "Студент: Мусатов Д.Р.\r\n\r\nДанные о варианте:\r\nx0: -3\r\ny0: 1\r\nr: 2\r\nНаправление: вертикально\r\nC: -2\r\n";
+            label2.Text = "Студент: Мусатов Д.Р.\r\n\r\nДанные о варианте:\r\nx0: -3\r\ny0: 1\r\nr: 2\r\nC: -2\r\nНаправление: вертикально\r\n";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // SplashScreenForm

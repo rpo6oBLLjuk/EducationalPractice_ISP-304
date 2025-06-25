@@ -7,7 +7,7 @@ namespace Monte_Karlo.Models
         [Key]
         public int Id { get; set; }
 
-        public int PointsInCircle { get; set; }
+        public int Points { get; set; }
         public int PointsInSegment { get; set; }
         public double MonteCarloResult { get; set; }
 
@@ -17,7 +17,7 @@ namespace Monte_Karlo.Models
         public override string ToString()
         {
             return $"""
-                   Id: {Id}, PointsInCircle: {PointsInCircle}, PointsInSegment: {PointsInSegment},
+                   Id: {Id}, Points: {Points}, PointsInSegment: {PointsInSegment}, 
                    MonteCarloResult: {MonteCarloResult}, CircleParamsId: {CircleParamsId}
                    """;
         }

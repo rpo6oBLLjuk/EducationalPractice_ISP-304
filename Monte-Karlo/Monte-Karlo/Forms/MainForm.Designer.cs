@@ -86,6 +86,8 @@
             // 
             showMessageCheckBox.BackColor = Color.Transparent;
             showMessageCheckBox.CheckAlign = ContentAlignment.MiddleRight;
+            showMessageCheckBox.Checked = true;
+            showMessageCheckBox.CheckState = CheckState.Checked;
             showMessageCheckBox.ForeColor = SystemColors.Control;
             showMessageCheckBox.Location = new Point(3, 54);
             showMessageCheckBox.Margin = new Padding(2);
@@ -120,7 +122,6 @@
             scaleTrackBar.TabIndex = 0;
             scaleTrackBar.TickFrequency = 5;
             scaleTrackBar.TickStyle = TickStyle.None;
-            scaleTrackBar.UseWaitCursor = true;
             scaleTrackBar.Value = 15;
             scaleTrackBar.Scroll += scaleTrackbar_Scroll;
             // 
@@ -294,17 +295,16 @@
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Inherit;
             ClientSize = new Size(950, 703);
             Controls.Add(paintPanel);
             Controls.Add(menuStrip);
             DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MainMenuStrip = menuStrip;
             Name = "MainForm";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Основное окно";
+            WindowState = FormWindowState.Maximized;
             FormClosed += MainForm_FormClosed;
             paintPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);

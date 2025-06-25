@@ -372,7 +372,9 @@ namespace Monte_Karlo
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "AnalysisForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Анализ результатов измерений";
+            WindowState = FormWindowState.Maximized;
             Load += AnalysisForm_Load;
             tabControl1.ResumeLayout(false);
             tabPageStats.ResumeLayout(false);

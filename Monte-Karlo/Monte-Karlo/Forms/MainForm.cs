@@ -192,12 +192,14 @@ namespace Monte_Karlo
             double roundRelativeError = Math.Round(relativeError, 4);
             double maxAccuracy = 1 / (double)pointsCount;
             string message = $"""
-            Площадь круга: {Calculator.CircleSuare(circle.radius):F4}
             Всего точек: {currentPoints.Points.Count}
             Количество точек попавших в круг {currentPoints.IncludedPoints.Count}
             Количество точек в большей секции: {currentPoints.CuttedPoints.Count}
+            ---------------------------------------------------------------------
+            Площадь круга: {Calculator.CircleSuare(circle.radius):F4}
             Площадь секции аналитически: {realSquare:F4}
             Площадь секции методом Монте-Карло: {monteCarloSquare:F4}
+            ---------------------------------------------------------------------
             Абсолютаня погрешность вычислений: {roundAbsoluteError}
             Относительная погрешность вычислений: {roundRelativeError}%
             Максимальная точность при заданном количестве точек: {maxAccuracy}

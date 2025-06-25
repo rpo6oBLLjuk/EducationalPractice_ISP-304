@@ -25,11 +25,7 @@ namespace Monte_Karlo.DataBase
         {
             modelBuilder.Entity<CircleParams>()
                 .HasIndex(cp => new 
-                { 
-                    cp.CenterX, 
-                    cp.CenterY, 
-                    cp.Radius, 
-                    cp.C, 
+                {
                     cp.TotalPoints 
                 })
                 .IsUnique();
