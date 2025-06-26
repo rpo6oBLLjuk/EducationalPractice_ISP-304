@@ -16,7 +16,7 @@ namespace Monte_Karlo.Utilites.View
         private int _gridStep = 100;
         private int _step = 200;
 
-        private static readonly int _viewPointsLimit = 100_000;
+        private static readonly int _viewPointsLimit = 1_000_000;
 
         private static readonly Color _backgroundColor = Color.FromArgb(20, 20, 20); //Black
         private static readonly Pen _gridPen = new(Color.Gray, 1);

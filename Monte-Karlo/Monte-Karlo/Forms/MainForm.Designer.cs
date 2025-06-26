@@ -159,7 +159,7 @@
             pointsCountUpdown.BackColor = SystemColors.ControlDarkDark;
             pointsCountUpdown.ForeColor = SystemColors.Control;
             pointsCountUpdown.Location = new Point(177, 61);
-            pointsCountUpdown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            pointsCountUpdown.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
             pointsCountUpdown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             pointsCountUpdown.Name = "pointsCountUpdown";
             pointsCountUpdown.Size = new Size(123, 27);

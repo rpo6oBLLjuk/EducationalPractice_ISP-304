@@ -75,8 +75,9 @@ namespace Monte_Karlo
             tabControl1.Controls.Add(tabPageGraph);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
-            tabControl1.Margin = new Padding(3, 4, 3, 4);
+            tabControl1.Margin = new Padding(0);
             tabControl1.Name = "tabControl1";
+            tabControl1.Padding = new Point(0, 0);
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(914, 600);
             tabControl1.TabIndex = 0;

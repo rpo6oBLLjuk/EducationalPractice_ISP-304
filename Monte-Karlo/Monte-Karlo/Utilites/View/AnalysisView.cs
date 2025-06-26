@@ -16,11 +16,11 @@ namespace Monte_Karlo.Utilites.View
         private static readonly Color _backgroundColor = Color.White;
         private static readonly Color _gridColor = Color.LightGray;
         private static readonly Color _legendBackgroundColor = Color.LightGray;
-        private static readonly Padding _padding = new Padding(50, 20, 70, 40);
+        private static readonly Padding _padding = new Padding(100, 20, 70, 40);
         private static readonly double _percentYPadding = 0.1;
-        private static readonly Font _textFont = SystemFonts.DefaultFont;
+        private static readonly Font _textFont = new Font("SegoUI", emSize: 8);
         private static readonly Brush _textBrush = Brushes.Black;
-        private static readonly float _pointRadius = 3;
+        private static readonly float _pointRadius = 5;
 
         public void RenderAnalysis(Panel panel, PaintEventArgs e, CircleParams circleParams)
         {
@@ -38,7 +38,7 @@ namespace Monte_Karlo.Utilites.View
 
         private void OnPaint(Panel panel, Graphics g, CircleParams circleParams)
         {
-            g.SmoothingMode = SmoothingMode.HighQuality;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
 
             List<double> mcResults = circleParams.Results.Select(r => r.MonteCarloResult).ToList();
             double analyticalValue = circleParams.AnalyticalResult;
@@ -86,7 +86,7 @@ namespace Monte_Karlo.Utilites.View
                 string text = (i + 1).ToString();
                 SizeF textSize = g.MeasureString(text, _textFont);
                 float textX = x - textSize.Width / 2;
-                float textY = plotArea.Bottom - textSize.Height;
+                float textY = plotArea.Bottom - textSize.Height + 20;
 
                 // особое расположение для 0
                 if (i == 0)
@@ -105,9 +105,9 @@ namespace Monte_Karlo.Utilites.View
                 // Подписи значений
                 double yRange = yMax - yMin;
                 double value = yMax - yRange * i / linesCount;
-                string text = value.ToString("F2");
+                string text = value.ToString("F6");
                 SizeF textSize = g.MeasureString(text, _textFont);
-                float textX = plotArea.Left - textSize.Width;
+                float textX = plotArea.Left - textSize.Width - 15;
                 float textY = y - textSize.Height / 2;
 
                 g.DrawString(text, _textFont, _textBrush, textX, textY);
@@ -152,10 +152,10 @@ namespace Monte_Karlo.Utilites.View
                 {
                     try
                     {
-                        previousX = currentX;
+                        previousX = currentX + 1;
                         previousY = currentY;
 
-                        currentX = left + width * i / xStep;
+                        currentX = left + width * i / xStep - 0.5f;
                         currentY = bottom - (float)((results[i] - yMin) * yScale);
 
                         if (i == 0)
@@ -222,7 +222,7 @@ namespace Monte_Karlo.Utilites.View
             float startY = area.Top;
             float itemHeight = textSize.Height;
 
-            g.FillRectangle(new SolidBrush(_legendBackgroundColor), startX, startY, 235, itemHeight * 5);
+            g.FillRectangle(new SolidBrush(_legendBackgroundColor), startX, startY, 260, itemHeight * 5);
 
             DrawLegendItem(g, "Аналитическое решение", _analyticalColor, startX, startY, boxWidth, itemHeight);
             DrawLegendItem(g, "Точки Монте-Карло", _pointsColor, startX, startY + itemHeight, boxWidth, itemHeight);

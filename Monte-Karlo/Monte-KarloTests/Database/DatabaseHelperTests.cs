@@ -29,9 +29,16 @@ namespace Monte_Karlo.DataBase.Tests
         public void GetDataTest()
         {
             Circle circle = new Circle();
-            int totalPoints = 100;
-            DatabaseHelper.SaveResults(circle, totalPoints, 1, 50, 45, 1);
-            var result = DatabaseHelper.GetData(circle, totalPoints);
+            PointsData totalPoints = new()
+            {
+                Points = new List<System.Drawing.PointF>(100),
+                IncludedPoints = new List<System.Drawing.PointF>(75),
+                CuttedPoints = new List<System.Drawing.PointF>(50),
+            };
+
+            DatabaseHelper dbHelper = new();
+            dbHelper.SaveResults(circle, totalPoints, 50, 45);
+            var result = dbHelper.GetData(circle, totalPoints.Points.Count());
             Console.WriteLine(result);
             foreach (var mem in result.GetType().GetMembers())
             { 

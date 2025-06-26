@@ -33,7 +33,6 @@ namespace Test
                 MaxDegreeOfParallelism = Environment.ProcessorCount
             };
             Point center = new Point(3, 1);
-            Direction direction = Direction.horizontal;
             float C = 2;
             int count = 100_000_000;
             var points = new PointF[count];
@@ -68,8 +67,6 @@ namespace Test
 
 
             var cuttedPoints = new ConcurrentBag<PointF>();
-            if (direction == Direction.vertical)
-            {
                 bool lefter = C < center.X;
                 float centerX = center.X;
 
@@ -84,24 +81,6 @@ namespace Test
                         cuttedPoints.Add(point);
                     }
                 });
-            }
-            else // horizontal
-            {
-                bool downer = C < center.Y;
-                float centerY = center.Y;
-
-                Parallel.ForEach(pointsData.IncludedPoints, parallelOptions, point =>
-                {
-                    bool condition = downer
-                        ? centerY + point.Y >= C
-                        : centerY + point.Y <= C;
-
-                    if (condition)
-                    {
-                        cuttedPoints.Add(point);
-                    }
-                });
-            }
             stopwatchs[4].Stop();
             pointsData.CuttedPoints = cuttedPoints.ToList();
             stopwatchs[5].Stop();

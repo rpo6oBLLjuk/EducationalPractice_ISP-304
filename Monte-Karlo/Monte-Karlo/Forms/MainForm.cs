@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -139,14 +140,14 @@ namespace Monte_Karlo
                 paintPanel.Invalidate();
 
                 double realSquare = Calculator.CalculateAnalyticArea(circle);
-                var roundedRealSquare = Math.Round(realSquare, 4);
+                var roundedRealSquare = Math.Round(realSquare, 6);
 
                 var currentPoints = _pointsGenerator.GetCurrentPoints();
                 double monteCarloSquare = Calculator.CalculateMonteCarloArea(
                     circle.radius,
                     currentPoints.Points.Count,
                     currentPoints.CuttedPoints.Count);
-                var roundedMonteCarloSquare = Math.Round(monteCarloSquare, 4);
+                var roundedMonteCarloSquare = Math.Round(monteCarloSquare, 6);
 
                 ShowAnswereMessage(realSquare, monteCarloSquare, currentPoints);
                 _logger.Log($"Сделаны расчёты с параметрами: {circle.ToString()} и количеством точек {pointsCount}");
@@ -177,8 +178,8 @@ namespace Monte_Karlo
         private void WriteResultOnLabels(double? realSquare, double monteCarloSquare)
         {
             if (realSquare.HasValue)
-                realSquareLabel.Text = $"Аналитически: {realSquare:F4}";
-            monteCarloSquareLabel.Text = $"Методом Монте-Карло: {monteCarloSquare:F4}";
+                realSquareLabel.Text = $"Аналитически: {realSquare:F6}";
+            monteCarloSquareLabel.Text = $"Методом Монте-Карло: {monteCarloSquare:F6}";
         }
 
         private void ShowAnswereMessage(double realSquare, double monteCarloSquare, PointsData currentPoints)
@@ -188,17 +189,17 @@ namespace Monte_Karlo
 
             double absoluteError = Calculator.CalculateAbsoluteError(realSquare, monteCarloSquare);
             double relativeError = Calculator.CalculateRelativeError(realSquare, monteCarloSquare);
-            double roundAbsoluteError = Math.Round(absoluteError, 4);
-            double roundRelativeError = Math.Round(relativeError, 4);
+            double roundAbsoluteError = Math.Round(absoluteError, 6);
+            double roundRelativeError = Math.Round(relativeError, 6);
             double maxAccuracy = 1 / (double)pointsCount;
             string message = $"""
             Всего точек: {currentPoints.Points.Count}
             Количество точек попавших в круг {currentPoints.IncludedPoints.Count}
             Количество точек в большей секции: {currentPoints.CuttedPoints.Count}
             ---------------------------------------------------------------------
-            Площадь круга: {Calculator.CircleSuare(circle.radius):F4}
-            Площадь секции аналитически: {realSquare:F4}
-            Площадь секции методом Монте-Карло: {monteCarloSquare:F4}
+            Площадь круга: {Calculator.CircleSuare(circle.radius):F8}
+            Площадь секции аналитически: {realSquare:F8}
+            Площадь секции методом Монте-Карло: {monteCarloSquare:F8}
             ---------------------------------------------------------------------
             Абсолютаня погрешность вычислений: {roundAbsoluteError}
             Относительная погрешность вычислений: {roundRelativeError}%
@@ -216,7 +217,21 @@ namespace Monte_Karlo
 
         private void programHelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Реализация справки
+            try
+            {
+                string helpFile = Path.Combine(Application.StartupPath, "Help", "annotatsiya.htm");
+
+                // Открываем справку в браузере по умолчанию
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = helpFile,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), $"Не удалось открыть справку");
+            }
         }
 
         private void aboutProgramToolStripMenuItem_Click(object sender, EventArgs e)
