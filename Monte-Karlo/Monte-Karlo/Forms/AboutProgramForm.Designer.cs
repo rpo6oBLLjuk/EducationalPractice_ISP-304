@@ -55,10 +55,10 @@ namespace Monte_Karlo
             // 
             titleLabel.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point, 204);
             titleLabel.ForeColor = Color.DarkBlue;
-            titleLabel.Location = new Point(294, 13);
+            titleLabel.Location = new Point(294, 1);
             titleLabel.Margin = new Padding(0, 0, 0, 7);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(235, 66);
+            titleLabel.Size = new Size(235, 94);
             titleLabel.TabIndex = 0;
             titleLabel.Text = "Вычислитель площади сегмента окружности";
             titleLabel.TextAlign = ContentAlignment.MiddleCenter;

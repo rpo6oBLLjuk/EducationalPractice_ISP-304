@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Monte-Karlo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b059648cfb819ea71c4d7c68ccd744804ee35025")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c60bbad1f66e67fc01b18bd651229144e194ff1c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Monte-Karlo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Monte-Karlo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
