@@ -1,0 +1,1236 @@
+﻿// ==================================================
+// File: D:\Колледж\Учебные практики\практика лето 2025\Monte-Karlo\TestProject\CalculatorTests.cs
+// ==================================================
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Monte_Karlo.Models;
+using Monte_Karlo.Utilites.Calculators;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+
+namespace TestProject
+{
+    [TestClass]
+    public class CalculatorTests
+    {
+        // Проверяем правильность вычисления площади круга
+        [TestMethod]
+        public void CircleSuare_CalculatesCorrectArea()
+        {
+            // Arrange
+            double radius = 5;
+            double expected = Math.PI * 25;
+
+            // Act
+            double result = Calculator.CircleSuare(radius);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        // Проверяем правильность вычисления метод Монте-Карло
+        [TestMethod]
+        public void CalculateMonteCarloArea_ReturnsCorrectValue()
+        {
+            // Arrange
+            float radius = 2;
+            int allPoints = 1000;
+            int cuttedPoints = 785;
+            double expected = (785d / 1000d) * 16; // (cutted/all) * (4*radius^2)
+
+            // Act
+            double result = Calculator.CalculateMonteCarloArea(radius, allPoints, cuttedPoints);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        // Проверяем правильность вычисления абсолютной погрешности
+        [TestMethod]
+        public void CalculateAbsoluteError_ReturnsCorrectValue()
+        {
+            // Arrange
+            double expected = 10.5;
+            double actual = 9.8;
+            double expectedError = 0.7;
+
+            // Act
+            double result = Calculator.CalculateAbsoluteError(expected, actual);
+
+            // Assert
+            Assert.AreEqual(expectedError, result, 0.0001);
+        }
+
+        // Проверяем правильность вычисления относительной погрешности
+        [TestMethod]
+        public void CalculateRelativeError_ReturnsCorrectPercentage()
+        {
+            // Arrange
+            double expected = 100;
+            double actual = 95;
+            double expectedError = 5; // 5%
+
+            // Act
+            double result = Calculator.CalculateRelativeError(expected, actual);
+
+            // Assert
+            Assert.AreEqual(expectedError, result, 0.0001);
+        }
+
+        // Проверяем реакцию вычисления погрешности при некорректных значениях
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CalculateRelativeError_ThrowsForZeroExpected()
+        {
+            // Arrange
+            double expected = 0;
+            double actual = 95;
+
+            // Act
+            Calculator.CalculateRelativeError(expected, actual);
+        }
+
+        // Проверяем правильность округления до двух значащих цифр
+        [TestMethod]
+        public void RoundToTwoSignificantDigits_RoundsCorrectly()
+        {
+            // Arrange
+            double value1 = 123.456;
+            double value2 = 0.0123456;
+            double expected1 = 120;
+            double expected2 = 0.012;
+
+            // Act
+            double result1 = Calculator.RoundToTwoSignificantDigits(value1, 2);
+            double result2 = Calculator.RoundToTwoSignificantDigits(value2, 2);
+
+            // Assert
+            Assert.AreEqual(expected1, result1);
+            Assert.AreEqual(expected2, result2);
+        }
+
+        // Проверяем вычисление площади, когда секущая линия вне окружности
+        [TestMethod]
+        public void CalculateAnalyticArea_HorizontalCut_ReturnsFullCircleWhenLineOutside()
+        {
+            // Arrange
+            var circle = new Circle(new Point(0, 0), 5, Direction.horizontal, 10);
+            double expected = Math.PI * 25;
+
+            // Act
+            double result = Calculator.CalculateAnalyticArea(circle);
+
+            // Assert
+            Assert.AreEqual(expected, result, 0.0001);
+        }
+
+        // Проверяем вычисление площади, когда секущая линия проходит через центр окружности
+        [TestMethod]
+        public void CalculateAnalyticArea_VerticalCut_ReturnsHalfCircleWhenLineThroughCenter()
+        {
+            // Arrange
+            var circle = new Circle(new Point(0, 0), 5, Direction.vertical, 0);
+            double expected = Math.PI * 25 / 2;
+
+            // Act
+            double result = Calculator.CalculateAnalyticArea(circle);
+
+            // Assert
+            Assert.AreEqual(expected, result, 0.0001);
+        }
+
+        // Проверяем правильность вычисление площади большей секции окружности разделённой секущей линией
+        // параллельной оси OX
+        [TestMethod]
+        public void CalculateAnalyticArea_HorizontalCut_ReturnsCorrectSegmentArea()
+        {
+            // Arrange
+            var circle = new Circle(new Point(0, 0), 5, Direction.horizontal, 3);
+            double circleArea = Math.PI * 25;
+            double segmentArea = 25 * Math.Acos(3.0 / 5.0) - 3 * Math.Sqrt(25 - 9);
+            double expected = circleArea - segmentArea;
+
+            // Act
+            double result = Calculator.CalculateAnalyticArea(circle);
+
+            // Assert
+            Assert.AreEqual(expected, result, 0.0001);
+        }
+
+        // Проверяем рекцию вычисления площади при некорректных значениях
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CalculateAnalyticArea_ThrowsForZeroRadius()
+        {
+            // Arrange
+            var circle = new Circle(new Point(0, 0), 0, Direction.horizontal, 0);
+
+            // Act
+            Calculator.CalculateAnalyticArea(circle);
+        }
+    }
+}
+
+// ==================================================
+// File: D:\Колледж\Учебные практики\практика лето 2025\Monte-Karlo\TestProject\CircleParams.cs
+// ==================================================
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Monte_Karlo.Models;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace TestProject
+{
+    [TestClass]
+    public class CircleParamsTests
+    {
+        // Проверяет, что конструктор по умолчанию инициализирует коллекцию Results
+        [TestMethod]
+        public void CircleParams_DefaultConstructor_InitializesResultsList()
+        {
+            // Arrange & Act
+            var circleParams = new CircleParams();
+
+            // Assert
+            Assert.IsNotNull(circleParams.Results);
+            Assert.AreEqual(0, circleParams.Results.Count);
+        }
+
+        // Проверяет корректность установки и получения значений всех свойств класса
+        [TestMethod]
+        public void CircleParams_Properties_CanBeSetAndGet()
+        {
+            // Arrange
+            var circleParams = new CircleParams
+            {
+                Id = 1,
+                CenterX = 2.5,
+                CenterY = 3.5,
+                Radius = 10,
+                Direction = Direction.vertical,
+                C = 4.2,
+                TotalPoints = 10000,
+                AnalyticalResult = 78.54
+            };
+
+            // Act & Assert
+            Assert.AreEqual(1, circleParams.Id);
+            Assert.AreEqual(2.5, circleParams.CenterX);
+            Assert.AreEqual(3.5, circleParams.CenterY);
+            Assert.AreEqual(10, circleParams.Radius);
+            Assert.AreEqual(Direction.vertical, circleParams.Direction);
+            Assert.AreEqual(4.2, circleParams.C);
+            Assert.AreEqual(10000, circleParams.TotalPoints);
+            Assert.AreEqual(78.54, circleParams.AnalyticalResult);
+        }
+
+        // Проверяет возможность добавления элементов в коллекцию Results
+        [TestMethod]
+        public void CircleParams_Results_CanBeAdded()
+        {
+            // Arrange
+            var circleParams = new CircleParams();
+            var result = new SimulationResult { Id = 1 };
+
+            // Act
+            circleParams.Results.Add(result);
+
+            // Assert
+            Assert.AreEqual(1, circleParams.Results.Count);
+            Assert.AreEqual(1, circleParams.Results[0].Id);
+        }
+
+        // Проверяет, что метод ToString возвращает строку с ожидаемым форматом и данными
+        [TestMethod]
+        public void CircleParams_ToString_ReturnsCorrectFormat()
+        {
+            // Arrange
+            var circleParams = new CircleParams
+            {
+                Id = 1,
+                CenterX = 2.5,
+                CenterY = 3.5,
+                Radius = 10,
+                Direction = Direction.vertical,
+                C = 4.2,
+                TotalPoints = 10000,
+                AnalyticalResult = 78.54
+            };
+
+            // Act
+            var result = circleParams.ToString();
+
+            // Assert
+            StringAssert.Contains(result, "Id: 1");
+            StringAssert.Contains(result, "CenterX: 2,5");
+            StringAssert.Contains(result, "CenterY: 3,5");
+            StringAssert.Contains(result, "Radius: 10");
+            StringAssert.Contains(result, "Direction: vertical");
+            StringAssert.Contains(result, "C: 4,2");
+            StringAssert.Contains(result, "TotalPoints: 10000");
+            StringAssert.Contains(result, "AnalyticalResult: 78,54");
+            StringAssert.Contains(result, "ResultsCount: 0");
+        }
+    }
+}
+
+// ==================================================
+// File: D:\Колледж\Учебные практики\практика лето 2025\Monte-Karlo\TestProject\CircleTests.cs
+// ==================================================
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Monte_Karlo.Models;
+using System;
+using System.Drawing;
+
+namespace TestProject
+{
+    [TestClass]
+    public class CircleTests
+    {
+        // Проверяем конструкторы по умолчанию
+        [TestMethod]
+        public void Circle_DefaultConstructor_SetsDefaultValues()
+        {
+            // Arrange & Act
+            var circle = new Circle();
+
+            // Assert
+            Assert.AreEqual(3, circle.circleCenter.X);
+            Assert.AreEqual(1, circle.circleCenter.Y);
+            Assert.AreEqual(2, circle.radius);
+            Assert.AreEqual(Direction.horizontal, circle.direction);
+            Assert.AreEqual(2, circle.C);
+        }
+
+        // Проверяем конструкторы со своими значениями
+        [TestMethod]
+        public void Circle_ParameterizedConstructor_SetsCorrectValues()
+        {
+            // Arrange
+            var center = new Point(5, 5);
+            float radius = 10;
+            var direction = Direction.vertical;
+            float c = 3;
+
+            // Act
+            var circle = new Circle(center, radius, direction, c);
+
+            // Assert
+            Assert.AreEqual(center.X, circle.circleCenter.X);
+            Assert.AreEqual(center.Y, circle.circleCenter.Y);
+            Assert.AreEqual(radius, circle.radius);
+            Assert.AreEqual(direction, circle.direction);
+            Assert.AreEqual(c, circle.C);
+        }
+
+        // Тестируем метод Equals для сравнения объектов
+        [TestMethod]
+        public void Circle_Equals_ReturnsTrueForEqualCircles()
+        {
+            // Arrange
+            var circle1 = new Circle(new Point(1, 2), 3, Direction.horizontal, 4);
+            var circle2 = new Circle(new Point(1, 2), 3, Direction.horizontal, 4);
+
+            // Act & Assert
+            Assert.IsTrue(circle1.Equals(circle2));
+        }
+
+        // Тестируем метод Equals для сравнения объектов
+        [TestMethod]
+        public void Circle_Equals_ReturnsFalseForDifferentCircles()
+        {
+            // Arrange
+            var circle1 = new Circle(new Point(1, 2), 3, Direction.horizontal, 4);
+            var circle2 = new Circle(new Point(1, 2), 3, Direction.vertical, 4);
+            var circle3 = new Circle(new Point(1, 3), 3, Direction.horizontal, 4);
+            var circle4 = new Circle(new Point(1, 2), 4, Direction.horizontal, 4);
+            var circle5 = new Circle(new Point(1, 2), 3, Direction.horizontal, 5);
+
+            // Act & Assert
+            Assert.IsFalse(circle1.Equals(circle2));
+            Assert.IsFalse(circle1.Equals(circle3));
+            Assert.IsFalse(circle1.Equals(circle4));
+            Assert.IsFalse(circle1.Equals(circle5));
+        }
+
+        // Тестируем метод Equals на null
+        [TestMethod]
+        public void Circle_Equals_ReturnsFalseForNull()
+        {
+            // Arrange
+            var circle = new Circle();
+
+            // Act & Assert
+            Assert.IsFalse(circle.Equals(null));
+        }
+
+        // Проверяем GetHashCode для равных объектов
+        [TestMethod]
+        public void Circle_GetHashCode_ReturnsSameForEqualObjects()
+        {
+            // Arrange
+            var circle1 = new Circle(new Point(1, 2), 3, Direction.horizontal, 4);
+            var circle2 = new Circle(new Point(1, 2), 3, Direction.horizontal, 4);
+
+            // Act & Assert
+            Assert.AreEqual(circle1.GetHashCode(), circle2.GetHashCode());
+        }
+
+        // Тестируем ToString на корректность форматирования
+        [TestMethod]
+        public void Circle_ToString_ReturnsCorrectFormat()
+        {
+            // Arrange
+            var circle = new Circle(new Point(1, 2), 3, Direction.vertical, 4);
+
+            // Act
+            var result = circle.ToString();
+
+            // Assert
+            StringAssert.Contains(result, "CircleCenter: {X=1,Y=2}");
+            StringAssert.Contains(result, "Radius: 3");
+            StringAssert.Contains(result, "Direction: vertical");
+            StringAssert.Contains(result, "C: 4");
+        }
+    }
+}
+
+// ==================================================
+// File: D:\Колледж\Учебные практики\практика лето 2025\Monte-Karlo\TestProject\DatabaseHelperTests.cs
+// ==================================================
+
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Monte_Karlo.DataBase;
+using Monte_Karlo.Models;
+using Monte_Karlo.Utilites;
+using System;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+
+namespace TestProject
+{
+    [TestClass]
+    [DoNotParallelize]
+    public class DatabaseHelperTests
+    {
+        private DatabaseHelper _dbHelper;
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            _dbHelper = new DatabaseHelper();
+        }
+
+        [TestCleanup]
+        public void TestCleanup()
+        {
+            using var context = new AppDbContext();
+            context.Database.EnsureDeleted();
+        }
+
+        // Проверяет, что база данных инициализируется корректно
+        [TestMethod]
+        public void InitializeDatabase_CreatesDatabaseIfNotExists()
+        {
+            // Arrange
+            using var context = new AppDbContext();
+            context.Database.EnsureCreated();
+
+            // Act
+            _dbHelper.InitializeDatabase();
+
+            // Assert
+            Assert.IsTrue(context.Database.CanConnect());
+        }
+
+        // Проверяет, что метод ClearDatabase корректно очищает базу данных
+        [TestMethod]
+        public void ClearDatabase_DeletesAndRecreatesDatabase()
+        {
+            // Arrange
+            _dbHelper.InitializeDatabase();
+
+            // Act
+            _dbHelper.ClearDatabase();
+
+            // Assert
+            using var context = new AppDbContext();
+            Assert.IsTrue(context.Database.CanConnect());
+            Assert.AreEqual(0, context.CircleParams.Count());
+        }
+
+        // Проверяет сохранение результатов в базу данных
+        [TestMethod]
+        public void SaveResults_SavesNewCircleParamsAndResults()
+        {
+            // Arrange
+            var circle = new Circle(new Point(1, 2), 3, Direction.horizontal, 4);
+            var pointsData = new PointsData
+            {
+                Points = Enumerable.Repeat(new PointF(0, 0), 1000).ToList(),
+                IncludedPoints = Enumerable.Repeat(new PointF(0, 0), 785).ToList(),
+                CuttedPoints = Enumerable.Repeat(new PointF(0, 0), 500).ToList()
+            };
+            double analyticalResult = 28.2743;
+            double monteCarloResult = 28.26;
+
+            // Act
+            _dbHelper.SaveResults(circle, pointsData, analyticalResult, monteCarloResult);
+
+            // Assert
+            using var context = new AppDbContext();
+            var savedParams = context.CircleParams.First();
+            var savedResult = context.SimulationResults.First();
+
+            Assert.AreEqual(1, context.CircleParams.Count());
+            Assert.AreEqual(1, context.SimulationResults.Count());
+            Assert.AreEqual(circle.circleCenter.X, savedParams.CenterX);
+            Assert.AreEqual(circle.radius, savedParams.Radius);
+            Assert.AreEqual(pointsData.Points.Count, savedParams.TotalPoints);
+            Assert.AreEqual(monteCarloResult, savedResult.MonteCarloResult);
+        }
+
+        // Проверяет, что при повторном сохранении с одинаковыми параметрами добавляется только новый результат
+        [TestMethod]
+        public void SaveResults_AddsNewResultForExistingParams()
+        {
+            // Arrange
+            var circle = new Circle(new Point(1, 2), 3, Direction.horizontal, 4);
+            var pointsData = new PointsData
+            {
+                Points = Enumerable.Repeat(new PointF(0, 0), 1000).ToList(),
+                IncludedPoints = Enumerable.Repeat(new PointF(0, 0), 785).ToList(),
+                CuttedPoints = Enumerable.Repeat(new PointF(0, 0), 500).ToList()
+            };
+
+            // Первое сохранение
+            _dbHelper.SaveResults(circle, pointsData, 28.2743, 28.26);
+
+            // Act - второе сохранение с теми же параметрами
+            _dbHelper.SaveResults(circle, pointsData, 28.2743, 28.30);
+
+            // Assert
+            using var context = new AppDbContext();
+            Assert.AreEqual(1, context.CircleParams.Count(), string.Join("\n", context.CircleParams));
+            Assert.AreEqual(2, context.SimulationResults.Count(), string.Join("\n", context.SimulationResults));
+        }
+
+        // Проверяет получение данных по параметрам круга
+        [TestMethod]
+        public void GetData_ReturnsCorrectCircleParams()
+        {
+            // Arrange
+            var circle = new Circle(new Point(0, 0), 3, Direction.horizontal, 4);
+            var pointsData = new PointsData
+            {
+                Points = Enumerable.Repeat(new PointF(0, 0), 1000).ToList(),
+                IncludedPoints = Enumerable.Repeat(new PointF(0, 0), 785).ToList(),
+                CuttedPoints = Enumerable.Repeat(new PointF(0, 0), 500).ToList()
+            };
+            _dbHelper.SaveResults(circle, pointsData, 28.2743, 28.26);
+
+            // Act
+            var result = _dbHelper.GetData(circle, 1000);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(circle.circleCenter.X, result.CenterX);
+            Assert.AreEqual(1, result.Results.Count, string.Join(", ", result.Results));
+        }
+
+        // Проверяет получение данных по ID
+        [TestMethod]
+        public void GetDataById_ReturnsCorrectCircleParams()
+        {
+            // Arrange
+            var circle = new Circle(new Point(1, 2), 3, Direction.horizontal, 4);
+            var pointsData = new PointsData
+            {
+                Points = Enumerable.Repeat(new PointF(0, 0), 1000).ToList(),
+                IncludedPoints = Enumerable.Repeat(new PointF(0, 0), 785).ToList(),
+                CuttedPoints = Enumerable.Repeat(new PointF(0, 0), 500).ToList()
+            };
+            _dbHelper.SaveResults(circle, pointsData, 28.2743, 28.26);
+            int id = 1; // Первая запись обычно имеет ID = 1
+
+            // Act
+            var result = _dbHelper.GetDataById(id);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(id, result.Id);
+        }
+
+        // Проверяет получение всех данных из базы
+        [TestMethod]
+        public void GetAllData_ReturnsAllSavedRecords()
+        {
+            // Arrange
+            var circle1 = new Circle(new Point(1, 2), 3, Direction.horizontal, 4);
+            var circle2 = new Circle(new Point(5, 6), 7, Direction.vertical, 8);
+            var pointsData = new PointsData
+            {
+                Points = Enumerable.Repeat(new PointF(0, 0), 1000).ToList(),
+                IncludedPoints = Enumerable.Repeat(new PointF(0, 0), 785).ToList(),
+                CuttedPoints = Enumerable.Repeat(new PointF(0, 0), 500).ToList()
+            };
+
+            _dbHelper.SaveResults(circle1, pointsData, 28.2743, 28.26);
+            _dbHelper.SaveResults(circle2, pointsData, 153.938, 154.0);
+
+            // Act
+            var results = _dbHelper.GetAllData();
+
+            // Assert
+            Assert.AreEqual(2, results.Count);
+        }
+
+        // Проверяет удаление записи по ID
+        [TestMethod]
+        public void RemoveCircleParamsById_DeletesRecord()
+        {
+            // Arrange
+            var circle = new Circle(new Point(1, 2), 3, Direction.horizontal, 4);
+            var pointsData = new PointsData
+            {
+                Points = Enumerable.Repeat(new PointF(0, 0), 1000).ToList(),
+                IncludedPoints = Enumerable.Repeat(new PointF(0, 0), 785).ToList(),
+                CuttedPoints = Enumerable.Repeat(new PointF(0, 0), 500).ToList()
+            };
+            _dbHelper.SaveResults(circle, pointsData, 28.2743, 28.26);
+            int id = 1;
+
+            // Act
+            _dbHelper.RemoveCircleParamsById(id);
+
+            // Assert
+            using var context = new AppDbContext();
+            Assert.IsNull(context.CircleParams.Find(id));
+            Assert.AreEqual(0, context.SimulationResults.Count(), string.Join("\n", context.SimulationResults));
+        }
+
+        // Проверяет создание резервной копии базы данных
+        [TestMethod]
+        public void CreateBackup_CreatesBackupFile()
+        {
+            // Arrange
+            var backupFileName = "Backup.db";
+
+            // Act
+            var result = _dbHelper.CreateBackup(backupFileName);
+
+            // Assert
+            Assert.IsTrue(File.Exists(backupFileName));
+            Assert.AreEqual(Path.GetFileName(backupFileName), result);
+
+            // Cleanup
+            File.Delete(backupFileName);
+        }
+    }
+}
+
+// ==================================================
+// File: D:\Колледж\Учебные практики\практика лето 2025\Monte-Karlo\TestProject\IntegrateTesting\GeneratePoints.cs
+// ==================================================
+
+using Monte_Karlo.DataBase;
+using Monte_Karlo.Utilites.View;
+using Monte_Karlo.Utilites;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Monte_Karlo.Models;
+using Monte_Karlo.Utilites.Calculators;
+using Newtonsoft.Json.Linq;
+using System.Drawing;
+using System.Threading;
+using System.Collections.Concurrent;
+
+namespace TestProject.IntegrateTesting
+{
+    [TestClass]
+    public class GeneratePointsTest
+    {
+        private Circle circle = new Circle();
+        private int pointsCount = 100_000;
+
+        // Проверка корректности результата при стартовых параметрах окружности по умолчанию
+        [TestMethod]
+        public void GeneratePoints_CheckCorrectWorkWithStartParametrs_ReturnCorrectResult()
+        {
+            // Arrange
+            double expectedRealSquer = 10.1096d;
+            double expectedMonteCarloPercentError = 0.05d;
+            double expectedDelta = expectedRealSquer * expectedMonteCarloPercentError;
+
+            // Act
+            var currentPoints = LocalGenerator(circle, pointsCount);
+            double realSquare = Calculator.CalculateAnalyticArea(circle);
+            var roundedRealSquare = Math.Round(realSquare, 4);
+
+            double monteCarloSquare = Calculator.CalculateMonteCarloArea(
+                circle.radius,
+                currentPoints.Points.Count,
+                currentPoints.CuttedPoints.Count);
+            var roundedMonteCarloSquare = Math.Round(monteCarloSquare, 4);
+
+            // Assert
+            Assert.AreEqual(expectedRealSquer, realSquare, 0.0001);
+            Assert.AreEqual(realSquare, monteCarloSquare, expectedDelta);
+        }
+
+        // Имитация PointsGenerator GenerateRandomPointsAsync(), так как тот многопоточный класс не тестируемый
+        private PointsData LocalGenerator(Circle circle, int count)
+        {
+            var newPoints = new PointsData();
+            newPoints.Points = new List<PointF>(count);
+
+            float radius = circle.radius;
+
+            var parallelOptions = new ParallelOptions
+            {
+                MaxDegreeOfParallelism = Environment.ProcessorCount
+            };
+
+            GeneratePoints(newPoints, count, radius, parallelOptions);
+            CalculateIncludedPoints(newPoints, radius, parallelOptions);
+            CalculateCuttedPoints(newPoints, circle, parallelOptions);
+
+            return newPoints;
+        }
+
+        // Генерация случайных точек
+        private static void GeneratePoints(PointsData pointsData, int count, float radius, ParallelOptions parallelOptions)
+        {
+            var random = new ThreadLocal<Random>(() => new Random(Guid.NewGuid().GetHashCode()));
+
+            var points = new PointF[count];
+            Parallel.For(0, count, parallelOptions, i =>
+            {
+                float x = (float)random.Value.NextDouble() * radius * 2 - radius;
+                float y = (float)random.Value.NextDouble() * radius * 2 - radius;
+                points[i] = new PointF(x, y);
+            });
+
+            pointsData.Points = points.ToList();
+        }
+
+        // Фильтрация точек, попавших в окружность
+        private static void CalculateIncludedPoints(PointsData pointsData, float radius, ParallelOptions parallelOptions)
+        {
+            float radiusSquared = radius * radius;
+            var includedPoints = new ConcurrentBag<PointF>();
+
+            Parallel.ForEach(pointsData.Points, parallelOptions, point =>
+            {
+                float distanceSquared = point.X * point.X + point.Y * point.Y;
+
+                if (distanceSquared < radiusSquared)
+                {
+                    includedPoints.Add(point);
+                }
+            });
+
+            pointsData.IncludedPoints = includedPoints.ToList();
+        }
+
+        // Фильтрация точек, попавших в больший сегмент окружности
+        private static void CalculateCuttedPoints(PointsData pointsData, Circle circle, ParallelOptions parallelOptions)
+        {
+            if (pointsData.IncludedPoints.Count == 0)
+                return;
+
+            var cuttedPoints = new ConcurrentBag<PointF>();
+            Point center = circle.circleCenter;
+            Direction direction = circle.direction;
+            float C = circle.C;
+
+            if (direction == Direction.vertical)
+            {
+                bool lefter = C < center.X;
+                float centerX = center.X;
+
+                Parallel.ForEach(pointsData.IncludedPoints, parallelOptions, point =>
+                {
+                    bool condition = lefter
+                        ? point.X + centerX >= C
+                        : point.X + centerX <= C;
+
+                    if (condition)
+                    {
+                        cuttedPoints.Add(point);
+                    }
+                });
+            }
+            else // horizontal
+            {
+                bool downer = C < center.Y;
+                float centerY = center.Y;
+
+                Parallel.ForEach(pointsData.IncludedPoints, parallelOptions, point =>
+                {
+                    bool condition = downer
+                        ? centerY + point.Y >= C
+                        : centerY + point.Y <= C;
+
+                    if (condition)
+                    {
+                        cuttedPoints.Add(point);
+                    }
+                });
+            }
+
+            pointsData.CuttedPoints.Clear();
+            pointsData.CuttedPoints = cuttedPoints.ToList();
+        }
+    }
+}
+
+
+// ==================================================
+// File: D:\Колледж\Учебные практики\практика лето 2025\Monte-Karlo\TestProject\LoggerTests.cs
+// ==================================================
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Monte_Karlo.Utilites;
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
+using File = System.IO.File;
+
+namespace TestProject
+{
+    [TestClass]
+    [DoNotParallelize]
+    public class LoggerTests
+    {
+        private Logger _logger;
+        private string _testLogDir;
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            _logger = new Logger();
+            _testLogDir = Path.Combine(Application.StartupPath, "Logs");
+
+            // Очищаем директорию с логами перед каждым тестом
+            if (Directory.Exists(_testLogDir))
+            {
+                Directory.Delete(_testLogDir, true);
+            }
+        }
+
+        [TestCleanup]
+        public void TestCleanup()
+        {
+            // Удаляем тестовую директорию после каждого теста
+            if (Directory.Exists(_testLogDir))
+            {
+                Directory.Delete(_testLogDir, true);
+            }
+        }
+
+        // Проверяет, что метод Log создает директорию для логов, если она не существует
+        [TestMethod]
+        public void Log_CreatesLogDirectoryIfNotExists()
+        {
+            // Arrange
+            string testMessage = "Test log message";
+
+            // Act
+            _logger.Log(testMessage);
+
+            // Assert
+            Assert.IsTrue(Directory.Exists(_testLogDir), "Log directory should be created");
+        }
+
+        // Проверяет, что метод Log создает файл лога с текущей датой в имени
+        [TestMethod]
+        public void Log_CreatesLogFileWithCurrentDate()
+        {
+            // Arrange
+            string testMessage = "Test log message";
+            string expectedFileName = DateTime.Now.ToString("yyyy-MM-dd") + ".log";
+            string expectedFilePath = Path.Combine(_testLogDir, expectedFileName);
+
+            // Act
+            _logger.Log(testMessage);
+
+            // Assert
+            Assert.IsTrue(File.Exists(expectedFilePath), "Log file should be created with current date");
+        }
+
+        // Проверяет, что метод Log добавляет сообщение в файл лога с правильным форматом
+        [TestMethod]
+        public void Log_WritesMessageWithTimestamp()
+        {
+            // Arrange
+            string testMessage = "Test log message";
+            string expectedFileName = DateTime.Now.ToString("yyyy-MM-dd") + ".log";
+            string expectedFilePath = Path.Combine(_testLogDir, expectedFileName);
+
+            // Act
+            _logger.Log(testMessage);
+
+            // Assert
+            string logContent = File.ReadAllText(expectedFilePath);
+            StringAssert.Contains(logContent, DateTime.Now.ToString("HH:mm:ss"));
+            StringAssert.Contains(logContent, testMessage);
+        }
+
+        // Проверяет, что метод LogException создает файл ошибки с правильным именем
+        [TestMethod]
+        public void LogException_CreatesErrorLogFile()
+        {
+            // Arrange
+            var exception = new Exception("Test exception");
+            string testMessage = "Test error message";
+            string expectedFileName = DateTime.Now.ToString("error") + ".log";
+            string expectedFilePath = Path.Combine(_testLogDir, expectedFileName);
+
+            // Act
+            _logger.LogException(exception, testMessage);
+
+            // Assert
+            Assert.IsTrue(File.Exists(expectedFilePath), "Error log file should be created");
+        }
+
+        // Проверяет, что метод LogException записывает полную информацию об исключении
+        [TestMethod]
+        public void LogException_WritesFullExceptionDetails()
+        {
+            // Arrange
+            var exception = new Exception("Test exception");
+            string testMessage = "Test error message";
+            string expectedFileName = "error.log";
+            string expectedFilePath = Path.Combine(_testLogDir, expectedFileName);
+
+            // Act
+            _logger.LogException(exception, testMessage);
+
+            // Assert
+            string logContent = File.ReadAllText(expectedFilePath);
+            StringAssert.Contains(logContent, exception.Message);
+            StringAssert.Contains(logContent, testMessage);
+        }
+
+        // Проверяет, что метод Log обрабатывает ошибки записи в лог
+        [TestMethod]
+        public void Log_HandlesWriteErrorsGracefully()
+        {
+            // Arrange
+            string testMessage = "Test log message";
+
+            // Создаем директорию без прав на запись
+            Directory.CreateDirectory(_testLogDir);
+            File.SetAttributes(_testLogDir, FileAttributes.ReadOnly);
+
+            // Act
+            try
+            {
+                _logger.Log(testMessage);
+
+                // Assert
+                // Если мы дошли сюда, значит исключение не было брошено
+                Assert.IsTrue(true);
+            }
+            finally 
+            {
+                File.SetAttributes(_testLogDir, FileAttributes.Normal);
+            }
+        }
+
+        // Проверяет, что метод LogException обрабатывает ошибки записи в лог
+        [TestMethod]
+        public void LogException_HandlesWriteErrorsGracefully()
+        {
+            // Arrange
+            var exception = new Exception("Test exception");
+            string testMessage = "Test error message";
+
+            // Создаем директорию без прав на запись
+            Directory.CreateDirectory(_testLogDir);
+            File.SetAttributes(_testLogDir, FileAttributes.ReadOnly);
+
+            // Act
+            try
+            {
+                _logger.LogException(exception, testMessage);
+
+                // Assert
+                // Если мы дошли сюда, значит исключение не было брошено
+                Assert.IsTrue(true);
+            }
+            finally 
+            {
+                File.SetAttributes(_testLogDir, FileAttributes.Normal);
+            }
+        }
+    }
+}
+
+// ==================================================
+// File: D:\Колледж\Учебные практики\практика лето 2025\Monte-Karlo\TestProject\MSTestSettings.cs
+// ==================================================
+
+[assembly: Parallelize(Scope = ExecutionScope.MethodLevel)]
+
+
+// ==================================================
+// File: D:\Колледж\Учебные практики\практика лето 2025\Monte-Karlo\TestProject\PointsDataTests.cs
+// ==================================================
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using Monte_Karlo.Models;
+using System.Drawing;
+
+namespace TestProject
+{
+    [TestClass]
+    public class PointsDataTests
+    {
+        // Проверка инициализации коллекций
+        [TestMethod]
+        public void PointsData_DefaultInitialization_CollectionsAreEmpty()
+        {
+            // Arrange & Act
+            var data = new PointsData();
+
+            // Assert
+            Assert.AreEqual(0, data.Points.Count);
+            Assert.AreEqual(0, data.IncludedPoints.Count);
+            Assert.AreEqual(0, data.CuttedPoints.Count);
+        }
+
+        // Корректность добавления элементов в коллекции
+        [TestMethod]
+        public void PointsData_AddPoints_CollectionsContainItems()
+        {
+            // Arrange & Act
+            var data = new PointsData
+            {
+                Points = new List<PointF> { new PointF(1, 2) },
+                IncludedPoints = new List<PointF> { new PointF(3, 4) },
+                CuttedPoints = new List<PointF> { new PointF(5, 6) }
+            };
+
+            // Assert
+            Assert.AreEqual(1, data.Points.Count);
+            Assert.AreEqual(1, data.IncludedPoints.Count);
+            Assert.AreEqual(1, data.CuttedPoints.Count);
+        }
+    }
+}
+
+// ==================================================
+// File: D:\Колледж\Учебные практики\практика лето 2025\Monte-Karlo\TestProject\SimulationResultTests.cs
+// ==================================================
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Monte_Karlo.Models;
+using System.ComponentModel.DataAnnotations;
+
+namespace TestProject
+{
+    [TestClass]
+    public class SimulationResultTests
+    {
+        // Проверяет корректность установки и получения значений всех свойств класса
+        [TestMethod]
+        public void SimulationResult_Properties_CanBeSetAndGet()
+        {
+            // Arrange
+            var result = new SimulationResult
+            {
+                Id = 1,
+                PointsInCircle = 100,
+                PointsInSegment = 50,
+                MonteCarloResult = 3.14,
+                CircleParamsId = 2
+            };
+
+            // Act & Assert
+            Assert.AreEqual(1, result.Id);
+            Assert.AreEqual(100, result.PointsInCircle);
+            Assert.AreEqual(50, result.PointsInSegment);
+            Assert.AreEqual(3.14, result.MonteCarloResult);
+            Assert.AreEqual(2, result.CircleParamsId);
+        }
+
+        
+        // Проверяет возможность установки и получения связанного объекта CircleParams
+        [TestMethod]
+        public void SimulationResult_CircleParams_CanBeSet()
+        {
+            // Arrange
+            var result = new SimulationResult();
+            var circleParams = new CircleParams { Id = 1 };
+
+            // Act
+            result.CircleParams = circleParams;
+
+            // Assert
+            Assert.IsNotNull(result.CircleParams);
+            Assert.AreEqual(1, result.CircleParams.Id);
+        }
+
+        
+        // Проверяет, что метод ToString возвращает строку с ожидаемым форматом и данными
+        [TestMethod]
+        public void SimulationResult_ToString_ReturnsCorrectFormat()
+        {
+            // Arrange
+            var result = new SimulationResult
+            {
+                Id = 1,
+                PointsInCircle = 100,
+                PointsInSegment = 50,
+                MonteCarloResult = 3.14,
+                CircleParamsId = 2
+            };
+
+            // Act
+            var str = result.ToString();
+
+            // Assert
+            StringAssert.Contains(str, "Id: 1");
+            StringAssert.Contains(str, "PointsInCircle: 100");
+            StringAssert.Contains(str, "PointsInSegment: 50");
+            StringAssert.Contains(str, "MonteCarloResult: 3,14");
+            StringAssert.Contains(str, "CircleParamsId: 2");
+        }
+    }
+}
+
+// ==================================================
+// File: D:\Колледж\Учебные практики\практика лето 2025\Monte-Karlo\TestProject\StatisticCalculatorTests.cs
+// ==================================================
+
+using Monte_Karlo.Utilites.Calculators;
+
+namespace TestProject
+{
+    [TestClass]
+    public class StatisticCalculatorTests
+    {
+        // Проверяет правильность вычисления медианы при нечётном количестве элементов
+        [TestMethod]
+        public void CalculateMedian_ReturnsCorrectForOddCount()
+        {
+            // Arrange
+            var values = new List<double> { 1, 3, 5, 7, 9 };
+            double expected = 5;
+
+            // Act
+            double result = StatisticCalculator.CalculateMedian(values);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        // Проверяет правильность вычисления медианы при чётном количестве элементов
+        [TestMethod]
+        public void CalculateMedian_ReturnsCorrectForEvenCount()
+        {
+            // Arrange
+            var values = new List<double> { 1, 3, 5, 7, 9, 11 };
+            double expected = 6;
+
+            // Act
+            double result = StatisticCalculator.CalculateMedian(values);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        // Проверяет правильность вычисления моды
+        [TestMethod]
+        public void CalculateMode_ReturnsMostFrequentValue()
+        {
+            // Arrange
+            var values = new List<double> { 1, 2, 2, 3, 4 };
+            double expected = 2;
+
+            // Act
+            double result = StatisticCalculator.CalculateMode(values);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        // Проверяет правильность вычисления дисперсии
+        [TestMethod]
+        public void CalculateVariance_ReturnsCorrectValue()
+        {
+            // Arrange
+            var values = new List<double> { 1, 2, 3, 4, 5 };
+            double mean = 3;
+            double expected = (4 + 1 + 0 + 1 + 4) / 5.0;
+
+            // Act
+            double result = StatisticCalculator.CalculateVariance(values);
+
+            // Assert
+            Assert.AreEqual(expected, result, 0.0001);
+        }
+
+        // Проверяет правильность вычисления стандартного отклонения при уже вычисленной дисперсии
+        [TestMethod]
+        public void CalculateStandardDeviation_ReturnsCorrectValue()
+        {
+            // Arrange
+            double variance = 4;
+            double expected = 2;
+
+            // Act
+            double result = StatisticCalculator.CalculateStandardDeviation(variance);
+
+            // Assert
+            Assert.AreEqual(expected, result, 0.0001);
+        }
+
+        // Проверяет правильность вычисления стандартного отклонения
+        [TestMethod]
+        public void CalculateStandardDeviation_FromList_ReturnsCorrectValue()
+        {
+            // Arrange
+            var values = new List<double> { 1, 2, 3, 4, 5 };
+            double variance = 2;
+            double expected = Math.Sqrt(variance);
+
+            // Act
+            double result = StatisticCalculator.CalculateStandardDeviation(values);
+
+            // Assert
+            Assert.AreEqual(expected, result, 0.0001);
+        }
+
+        // Проверяет правильность вычисления размаха
+        [TestMethod]
+        public void CalculateRange_ReturnsDifferenceBetweenMaxAndMin()
+        {
+            // Arrange
+            var values = new List<double> { 1, 5, 3, 9, 2 };
+            double expected = 8;
+
+            // Act
+            double result = StatisticCalculator.CalculateRange(values);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+        }
+    }
+}
+

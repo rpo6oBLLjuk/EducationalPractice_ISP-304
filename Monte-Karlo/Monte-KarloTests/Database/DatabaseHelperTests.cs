@@ -1,11 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Monte_Karlo.DataBase;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Monte_Karlo.Models;
+﻿using Monte_Karlo.Models;
 
 namespace Monte_Karlo.DataBase.Tests
 {
@@ -13,20 +6,20 @@ namespace Monte_Karlo.DataBase.Tests
     public class DatabaseHelperTests
     {
         [ClassCleanup]
-        public void ClassCleanup()
+        public static void ClassCleanup()
         {
             var context = new AppDbContext();
             context.Database.EnsureDeleted();
         }
 
         [TestMethod()]
-        public void SaveResultsTest()
+        public static void SaveResultsTest()
         {
             Assert.Fail();
         }
 
         [TestMethod()]
-        public void GetDataTest()
+        public static void GetDataTest()
         {
             Circle circle = new Circle();
             PointsData totalPoints = new()
@@ -41,10 +34,10 @@ namespace Monte_Karlo.DataBase.Tests
             var result = dbHelper.GetData(circle, totalPoints.Points.Count());
             Console.WriteLine(result);
             foreach (var mem in result.GetType().GetMembers())
-            { 
+            {
                 Console.WriteLine($"{mem.ToString()} - {mem.Name}, {mem.MemberType}");
             }
-                
+
         }
     }
 }

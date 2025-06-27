@@ -2796,7 +2796,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net9.0-windows"
+        "net9.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -2804,7 +2804,7 @@
       },
       "frameworks": {
         "net9.0-windows7.0": {
-          "targetAlias": "net9.0-windows",
+          "targetAlias": "net9.0-windows7.0",
           "projectReferences": {
             "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Monte-Karlo.csproj": {
               "projectPath": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Monte-Karlo.csproj"
@@ -2826,7 +2826,7 @@
     },
     "frameworks": {
       "net9.0-windows7.0": {
-        "targetAlias": "net9.0-windows",
+        "targetAlias": "net9.0-windows7.0",
         "dependencies": {
           "MSTest": {
             "target": "Package",
