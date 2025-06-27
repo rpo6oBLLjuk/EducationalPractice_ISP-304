@@ -1,21 +1,4 @@
-﻿using Monte_Karlo.DataBase;
-using Monte_Karlo.Utilites.View;
-using Monte_Karlo.Utilites;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Monte_Karlo.Models;
-using Monte_Karlo.Utilites.Calculators;
-using Newtonsoft.Json.Linq;
-using System.Drawing;
-using System.Threading;
-using System.Collections.Concurrent;
-
-namespace TestProject.IntegrateTesting
+﻿namespace TestProject.IntegrateTesting
 {
     [TestClass]
     public class GeneratePointsTest

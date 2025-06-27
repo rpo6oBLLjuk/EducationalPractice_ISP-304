@@ -1,0 +1,71 @@
+[23:03:27] Создание базы данных
+[23:03:27] Приложение запущено
+[23:03:28] Сделаны расчёты с параметрами: CircleCenter: {X=-3,Y=1}, Radius: 2, C: -2 и количеством точек 100000
+[23:03:28] Сохранение:
+Id: 1,
+TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658,
+ResultsCount: 1
+Id: 1, Points: 100000, PointsInSegment: 63332, 
+MonteCarloResult: 10,13312, CircleParamsId: 1
+[23:03:33] Сделаны расчёты с параметрами: CircleCenter: {X=-3,Y=1}, Radius: 2, C: -2 и количеством точек 100000
+[23:03:33] Сохранение:
+Id: 1,
+TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658,
+ResultsCount: 2
+Id: 2, Points: 100000, PointsInSegment: 63076, 
+MonteCarloResult: 10,09216, CircleParamsId: 1
+[23:03:34] Сделаны расчёты с параметрами: CircleCenter: {X=-3,Y=1}, Radius: 2, C: -2 и количеством точек 100000
+[23:03:34] Сохранение:
+Id: 1,
+TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658,
+ResultsCount: 3
+Id: 3, Points: 100000, PointsInSegment: 63171, 
+MonteCarloResult: 10,10736, CircleParamsId: 1
+[23:03:35] Сделаны расчёты с параметрами: CircleCenter: {X=-3,Y=1}, Radius: 2, C: -2 и количеством точек 100000
+[23:03:35] Сохранение:
+Id: 1,
+TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658,
+ResultsCount: 4
+Id: 4, Points: 100000, PointsInSegment: 63147, 
+MonteCarloResult: 10,10352, CircleParamsId: 1
+[23:03:35] Сделаны расчёты с параметрами: CircleCenter: {X=-3,Y=1}, Radius: 2, C: -2 и количеством точек 100000
+[23:03:35] Сохранение:
+Id: 1,
+TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658,
+ResultsCount: 5
+Id: 5, Points: 100000, PointsInSegment: 63264, 
+MonteCarloResult: 10,12224, CircleParamsId: 1
+[23:03:36] Сделаны расчёты с параметрами: CircleCenter: {X=-3,Y=1}, Radius: 2, C: -2 и количеством точек 100000
+[23:03:36] Сохранение:
+Id: 1,
+TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658,
+ResultsCount: 6
+Id: 6, Points: 100000, PointsInSegment: 63438, 
+MonteCarloResult: 10,15008, CircleParamsId: 1
+[23:03:49] Приложение закрыто
+[23:05:17] Приложение запущено
+[23:05:19] Сделаны расчёты с параметрами: CircleCenter: {X=-3,Y=1}, Radius: 2, C: -2 и количеством точек 100000
+[23:05:19] Сохранение:
+Id: 1,
+TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658,
+ResultsCount: 7
+Id: 7, Points: 100000, PointsInSegment: 63512, 
+MonteCarloResult: 10,16192, CircleParamsId: 1
+[23:05:22] Приложение закрыто
+[23:05:40] Приложение запущено
+[23:05:41] Сделаны расчёты с параметрами: CircleCenter: {X=-3,Y=1}, Radius: 2, C: -2 и количеством точек 100000
+[23:05:41] Сохранение:
+Id: 1,
+TotalPoints: 100000,
+AnalyticalResult: 10,109631217141658,
+ResultsCount: 8
+Id: 8, Points: 100000, PointsInSegment: 63220, 
+MonteCarloResult: 10,1152, CircleParamsId: 1
+[23:05:47] Приложение закрыто
