@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{66939EB3-1189-4F89-B0A3-101C526ACA72}|TestProject\\TestProject.csproj|c:\\users\\musat\\documents\\github\\educationalpractice_isp-304\\monte-karlo\\testproject\\models\\circletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66939EB3-1189-4F89-B0A3-101C526ACA72}|TestProject\\TestProject.csproj|solutionrelative:testproject\\models\\circletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\educationalpractice_isp-304\\monte-karlo\\monte-karlo\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -49,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|c:\\users\\musat\\documents\\github\\educationalpractice_isp-304\\monte-karlo\\monte-karlo\\database\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{418B6CB3-B2E1-4993-A70F-B590307E7038}|Monte-Karlo\\Monte-Karlo.csproj|solutionrelative:monte-karlo\\database\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66939EB3-1189-4F89-B0A3-101C526ACA72}|TestProject\\TestProject.csproj|c:\\users\\musat\\documents\\github\\educationalpractice_isp-304\\monte-karlo\\testproject\\models\\circletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66939EB3-1189-4F89-B0A3-101C526ACA72}|TestProject\\TestProject.csproj|solutionrelative:testproject\\models\\circletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66939EB3-1189-4F89-B0A3-101C526ACA72}|TestProject\\TestProject.csproj|c:\\users\\musat\\documents\\github\\educationalpractice_isp-304\\monte-karlo\\testproject\\databasehelpertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -150,11 +150,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 29,
+          "SelectedChildIndex": 7,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Forms\\MainForm.Designer.cs",
               "RelativeDocumentMoniker": "Monte-Karlo\\Forms\\MainForm.Designer.cs",
@@ -162,16 +166,11 @@
               "RelativeToolTip": "Monte-Karlo\\Forms\\MainForm.Designer.cs",
               "ViewState": "AgIAALoAAAAAAAAAAAAAAOsAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T11:43:39.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "WhenOpened": "2025-06-27T11:43:39.191Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Calculator.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Utilites\\Calculators\\Calculator.cs",
               "RelativeDocumentMoniker": "Monte-Karlo\\Utilites\\Calculators\\Calculator.cs",
@@ -179,8 +178,7 @@
               "RelativeToolTip": "Monte-Karlo\\Utilites\\Calculators\\Calculator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T11:42:50.334Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T11:42:50.334Z"
             },
             {
               "$type": "Document",
@@ -232,13 +230,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "CircleTests.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\TestProject\\Models\\CircleTests.cs",
               "RelativeDocumentMoniker": "TestProject\\Models\\CircleTests.cs",
               "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\TestProject\\Models\\CircleTests.cs",
               "RelativeToolTip": "TestProject\\Models\\CircleTests.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAApwEUAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAApwEUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-27T07:21:55.684Z",
               "EditorCaption": ""
@@ -305,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "PointsData.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Models\\PointsData.cs",
               "RelativeDocumentMoniker": "Monte-Karlo\\Models\\PointsData.cs",
@@ -313,8 +311,7 @@
               "RelativeToolTip": "Monte-Karlo\\Models\\PointsData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T06:13:51.908Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-25T06:13:51.908Z"
             },
             {
               "$type": "Document",
@@ -341,7 +338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "DatabaseHelper.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Database\\DatabaseHelper.cs",
               "RelativeDocumentMoniker": "Monte-Karlo\\Database\\DatabaseHelper.cs",
@@ -349,12 +346,11 @@
               "RelativeToolTip": "Monte-Karlo\\Database\\DatabaseHelper.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAApwCcAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T09:22:27.785Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T09:22:27.785Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Database\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Monte-Karlo\\Database\\AppDbContext.cs",
@@ -362,12 +358,11 @@
               "RelativeToolTip": "Monte-Karlo\\Database\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T09:22:23.068Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T09:22:23.068Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "AnalysisView.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Utilites\\View\\AnalysisView.cs",
               "RelativeDocumentMoniker": "Monte-Karlo\\Utilites\\View\\AnalysisView.cs",
@@ -375,12 +370,11 @@
               "RelativeToolTip": "Monte-Karlo\\Utilites\\View\\AnalysisView.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABgAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T09:21:41.784Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T09:21:41.784Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "StatisticCalculator.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Utilites\\Calculators\\StatisticCalculator.cs",
               "RelativeDocumentMoniker": "Monte-Karlo\\Utilites\\Calculators\\StatisticCalculator.cs",
@@ -388,8 +382,7 @@
               "RelativeToolTip": "Monte-Karlo\\Utilites\\Calculators\\StatisticCalculator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T09:18:17.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T09:18:17.617Z"
             },
             {
               "$type": "Document",
@@ -456,7 +449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "MonteCarloView.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Utilites\\View\\MonteCarloView.cs",
               "RelativeDocumentMoniker": "Monte-Karlo\\Utilites\\View\\MonteCarloView.cs",
@@ -464,12 +457,11 @@
               "RelativeToolTip": "Monte-Karlo\\Utilites\\View\\MonteCarloView.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T06:39:36.312Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T06:39:36.312Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CircleParams.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Models\\CircleParams.cs",
               "RelativeDocumentMoniker": "Monte-Karlo\\Models\\CircleParams.cs",
@@ -477,8 +469,7 @@
               "RelativeToolTip": "Monte-Karlo\\Models\\CircleParams.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T06:39:16.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T06:39:16.636Z"
             },
             {
               "$type": "Document",
@@ -495,7 +486,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Circle.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Models\\Circle.cs",
               "RelativeDocumentMoniker": "Monte-Karlo\\Models\\Circle.cs",
@@ -503,12 +494,11 @@
               "RelativeToolTip": "Monte-Karlo\\Models\\Circle.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T06:33:12.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T06:33:12.508Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Forms\\MainForm.cs",
               "RelativeDocumentMoniker": "Monte-Karlo\\Forms\\MainForm.cs",
@@ -521,15 +511,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Forms\\MainForm.cs",
               "RelativeDocumentMoniker": "Monte-Karlo\\Forms\\MainForm.cs",
               "ToolTip": "C:\\Users\\Musat\\Documents\\GitHub\\EducationalPractice_ISP-304\\Monte-Karlo\\Monte-Karlo\\Forms\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "Monte-Karlo\\Forms\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T06:24:18.066Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2025-06-24T06:24:18.066Z"
             },
             {
               "$type": "Document",
