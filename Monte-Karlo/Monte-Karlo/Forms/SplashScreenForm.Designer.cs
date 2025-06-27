@@ -71,21 +71,22 @@
             // label1
             // 
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Underline, GraphicsUnit.Point, 204);
-            label1.Location = new Point(471, 9);
+            label1.Location = new Point(390, 9);
             label1.Name = "label1";
-            label1.Size = new Size(162, 37);
+            label1.Size = new Size(319, 74);
             label1.TabIndex = 6;
-            label1.Text = "Вариант 26";
+            label1.Text = "Вычислитель площади сегмента окружности";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label2.Location = new Point(390, 64);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.Location = new Point(390, 83);
             label2.Name = "label2";
-            label2.Size = new Size(319, 244);
+            label2.Size = new Size(319, 225);
             label2.TabIndex = 7;
-            label2.Text = "Студент: Мусатов Д.Р.\r\n\r\nДанные о варианте:\r\nx0: -3\r\ny0: 1\r\nr: 2\r\nC: -2\r\nНаправление: вертикально\r\n";
+            label2.Text = "Вариант 26\r\nСтудент: Мусатов Д.Р.\r\nДанные о варианте:\r\nx0: -3\r\ny0: 1\r\nr: 2\r\nC: -2\r\nНаправление: вертикально\r\n";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // SplashScreenForm
