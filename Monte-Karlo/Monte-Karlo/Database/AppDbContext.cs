@@ -1,10 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Monte_Karlo.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Monte_Karlo.DataBase
 {
@@ -24,9 +19,9 @@ namespace Monte_Karlo.DataBase
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CircleParams>()
-                .HasIndex(cp => new 
+                .HasIndex(cp => new
                 {
-                    cp.TotalPoints 
+                    cp.TotalPoints
                 })
                 .IsUnique();
         }
